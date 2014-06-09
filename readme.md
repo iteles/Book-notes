@@ -4,3 +4,4 @@ I have a separate repo for [Javascript the Good Parts](https://github.com/iteles
 
 Currently in this Book-notes repo, you will find notes on:
 * Professional Node js _by Pedro Teixeira_
+* Start Small, Stay Small: A Developer's Guide to Launching a Startup _by Rob Walling_, 2010
