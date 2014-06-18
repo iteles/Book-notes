@@ -1,3 +1,6 @@
+
+*It should be noted that these notes contain the information I felt was most relevant from the book and are by no means exhaustive. They are a quick reference and I highly recommend going through the book independently.*
+
 ##Chapter 1 - Installing Node
 
 _Node Package Manager_ (NPM) allows you to download, install and manage third party modules. Node only runs low-level APIs so if you don't want to have to (re)do all the work yourself, NPM is almost always necessary.
@@ -44,6 +47,7 @@ Loading various module types:
 
 Modules are **initialized only once** and cached the first time, no matter how many times they are loaded with the `require` statement
 
+<a name="Chapter7"/>
 ##Chapter 7 - Querying, Reading from and Writing to Files
 
 ###Manipulating file paths
@@ -66,8 +70,17 @@ fs.exists('<filepath>', function(exists) {
 	//=> true/false
 });
 ```
+###Opening, reading and writing to files
+
+* To read or write to a file, you must first open is with `fs.open`, passing in a file path as the first argument and a flag as the second argument that indicates whether you want to read (r), read and write (r+), write a new file - or truncates an old one to zero length (w), read and write to a new file (w+), write text to the end of an existing file (a) or open an existing file for reading and appending text (a+)
+
+* You must close files you open - you do this by keeping track of the open file descriptors and closing them using `fs.close(fd, callback)`
+
+* It is, however, *much safer to use _ReadStream_s and _WriteStream_s* than fs.open, fs.write and fs.close processes as these are *safe to use concurrently where you may have two or more pending read or write processes* (more information in [Chapter 9](#Chapter9))
 
 
+<a name="Chapter9"/>
+##Chapter 9 - Reading & Writing Strams of Data
 
 
 [Interesting link on what Node.js is and why you would use it](http://www.toptal.com/nodejs/why-the-hell-would-i-use-node-js)
