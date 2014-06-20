@@ -80,7 +80,63 @@ fs.exists('<filepath>', function(exists) {
 
 
 <a name="Chapter9"/>
-##Chapter 9 - Reading & Writing Strams of Data
+##Chapter 9 - Reading & Writing Streams of Data
+
+###Readable Streams
+* Streams send data in chunks and as *buffers* by default - they're like "data faucets"
+* Listen for the 'data' event
+```javascript
+readable stream1.on('data', function(data){
+	console.log('Got this data: data');
+}); //every time a chunk of data comes through it will be printed to the console log
+```
+* If you know your data is a UTF-8 encoded string, have it in your code `stream1.setEncoding('utf8')` so that the stream knows how to deliver your characters
+* Pause the data stream with `stream.pause();` and resume it with `stream.resume();`
+* To know *when the stream ends, listen for the 'end' event*
+
+###Writable streams
+
+A writable stream is an object you can write data into.
+
+* The 'write' command returns _true_ if the buffer is immediately flushed or _false_ if it was queued instead `writable_stream.write('string of text')`
+
+_In practice_ you would use read or write streams with a file, pass it a file path as the first argument and a number of optional arguments enclosed in curly brackets {} as a second argument. You can also use an existing file, see page 79 for code examples.
+```javascript
+var fs = require('fs');
+var rs = fs.createReadStream('./path/to/file', {optional second arguments go here});
+...
+```
+* Once _all_ buffers are flushed, the stream emits a 'drain' event that you can listen to
+
+When a readStream is reading data faster that it can be written to the writeStream, this creates the *slow client problem* because you have to buffer the data and it gets backed up
+* To avoid this problem, you can use `stream.pause()` and `stream.resume()` to control the flow of the readStream, _however:_
+* This is so common that is has been captured in Node, where you can use `readStream.pipe(writeStream)`
+	* `'pipe` also automatically ends the stream when it is completed although you can prevent this by using the second _options_ argument `readStream.pipe(writeStream, {end: false})` if desired
+
+<a name="Chapter10"/>
+##Chapter 10 - Building TCP Servers
+
+When a new connection is established with the server, you are also handed a `socket` object as the first argument of the callback function.
+
+The *socket* object is both a *read and write stream*, which means it:
+	* emits 'data' events when it receives data (so you can listen for them and act on this)
+	* emits the 'end' event when the connection is closed AND
+	* you can write buffers or strings to it using `socket.write()`
+```javascript
+var server = require('net').createServer(function(socket){
+	console.log('A new connection has been created');
+
+	socket.setEnconding('utf8');
+	socket.write("Hello! Welcome to the command line.");
+	socket.end();
+	console.log('Client connection has now ended');
+	server.close(); //closes server
+}).listen(4001); //remember that the first line where var server is created doesn't actually end until here!
+//to try this out, launch the server from the command line & then establish a new connection to it (typing 'telnet localhost 4001' also into the command line)
+```
+
+
+
 
 
 [Interesting link on what Node.js is and why you would use it](http://www.toptal.com/nodejs/why-the-hell-would-i-use-node-js)
