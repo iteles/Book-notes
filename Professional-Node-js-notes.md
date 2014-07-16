@@ -123,6 +123,8 @@ The *socket* object is both a *read and write stream*, which means it:
 	* emits the 'end' event when the connection is closed AND
 	* you can write buffers or strings to it using `socket.write()`
 ```javascript
+//require 'net'because we're building a TCP server in this chapter, not 'http' for example
+
 var server = require('net').createServer(function(socket){
 	console.log('A new connection has been created');
 
@@ -134,6 +136,62 @@ var server = require('net').createServer(function(socket){
 }).listen(4001); //remember that the first line where var server is created doesn't actually end until here!
 //to try this out, launch the server from the command line & then establish a new connection to it (typing 'telnet localhost 4001' also into the command line)
 ```
+* Rather than using `socket.write()`, we can also use `socket.pipe()` to pipe the contents of that socket directly into a text file for example (remember to create the fs writeStream at the top of your code!)
+	* The text file doesn't need to already exist, it will be created when you start piping in content
+	* You would start your server with node and then in another terminal window, telnet into the port and then whatever you write in _that_ terminal window would be what would be piped into the text file
+
+* You can set the connection to timeOut after a certain amount of time or to close when no traffic is being received
+* You can also implement a keep-alive mechanism (`socket.setKeepAlive(true,<optionalTimeFrame>)`) which will periodically send empty packets to keep the connection open on both peers (seems a little bit wasteful though?)
+* If you find there is some latency in your application, you can force data to be sent immediately with `socket.setNoDelay(true)`
+
+Errors should be handled using the following pattern, or Node will terminate the current process:
+```javascript
+require('net').createServer (function(socket){
+	socket.on('error', function(error){
+		//do something
+	});
+});
+```
+In the book there is a great step-by-step example of building a simple TCP server. The final, commented code, can be found in my [Professional-Node-js-exercises folder in my _learning_ github repository](http://www.github.com/iteles)
+
+<a name="Chapter11"/>
+##Chapter 11 - Building HTTP Servers
+"One of the preferred application deployment mechanisms is to provide an HTTP service on the internet that answers HTTP client requests." - uses TCP as its transfer protocol.
+```javascript
+//very basic Hello World example
+require('http').createServer(function(request, response) {
+	response.writeHead(200, {'Content-Type': 'text/plain'});
+	response.write('Hello World!')
+	response.end('It all ends here'); //accepts a string that it writes to the response object before ending the request
+}).listen(4000); //binding to port 4000
+```
+* When a client makes a request, the HTTP server emits a `request` event, which gives you access to the properties of the request.
+* An HTTP `response` object is also passed in, which allows you to build up an HTTP response which will be sent back to the client
+
+####Understanding the HTTPS.ServerRequest object
+You can access the following request (req) object properties:
+* `req.url`: Contains requested URL as a string, e.g in example above, http://localhost:4000/ would write out '/' but http://localhost:4000/abcde would write out 'abcde'
+* `req.method`: HTTP method the request used, e.g. GET, PUT, POST, DELETE or HEAD
+* `req.headers`: Contains a property for each HTTP header on the request
+	* To inspect the headers on a request however, you would use it something like this (doesn't have to be with req.end()): `req.end(util.inspect(req.headers));`
+
+Interestingly, the request object is a _readStream_ and emits a 'data event' so if you wanted, you could pipe it into a file as it arrived:
+```javascript
+req.on('data', function(data) {
+	data.write(writeStream);
+});
+```
+####Understanding the HTTPS.ServerResponse object
+This response (res) object is used to reply to the client. You can use:
+* `res.writeHead(status, headers)` to write the header for the response, where status 200 means 'success' for example
+* `res.setHeader(name, value)` to change the header, but only works if you haven't already sent any of the body of the response
+* `res.write(contents)` to write text or a buffer to the body of the response
+
+You can pipe any readStream into the response. If you wanted to pipe in a movie for example, you would create the readStream with `var rs = fs.createReadStream('test.mp4')` and then pipe it in using `rs.pipe(res);`.
+If you then open your browser to the port you bound the server to, the movie should start playing straight away even though it hasn't fully loaded because Node uses _HTTP chunked encoding_
+
+You can also pipe in another process (such as a child process for example).
+
 
 
 
