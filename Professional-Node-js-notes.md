@@ -192,8 +192,23 @@ If you then open your browser to the port you bound the server to, the movie sho
 
 You can also pipe in another process (such as a child process for example).
 
+<a name="Chapter12"/>
+##Chapter 12 - Building a TCP Client
+_Skimmed through this chapter as not immediately relevant to what I'm doing, may come back to it for detailed noted_
+* TCP is one of the most used transport protocols in the world
+* HTTP which is an application protocol, sits atop it
+* TCP guarantees that the messages you receive are in order
+	* Note: When you write a TCP stream, you receive no acknowledgement that your data has been sent
+* After you have ended you connection using `conn.end()`, the connection does not end immediately as you are queueing the operation - this means you can still receive some packets of data
 
+####Using the command line
+* When a Node process starts, `process.stdin` is a readStream created by this process to accept keyboard input, initialised in the paused state
+ * You must resume it first using `process.stdin.resume();` and it will then start emitting data events when the user starts typing
+ * Once resumed, you can pipe this readStream of user input into conn, the writable stream to the server `process.stdin.pipe(conn)`
 
+<a name="Chapter13"/>
+##Chapter 13 - Making HTTP Requests
+> HTTP has become the preferred way of serving and consuming public-facing API calls.
 
 
 
