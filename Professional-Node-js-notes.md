@@ -152,7 +152,7 @@ require('net').createServer (function(socket){
 	});
 });
 ```
-In the book there is a great step-by-step example of building a simple TCP server. The final, commented code, can be found in my [Professional-Node-js-exercises folder in my _learning_ github repository](http://www.github.com/iteles)
+In the book there is a great step-by-step example of building a simple TCP server. The final, commented code, can be found in my [Professional-Node-js-exercises folder in my _learning_ github repository](https://github.com/iteles/learning/)
 
 <a name="Chapter11"/>
 ##Chapter 11 - Building HTTP Servers
