@@ -117,3 +117,41 @@ Your first product should take between **200 and 400 hours**.
 **TESTING PRICE**:
 * _Sales cycle < 1 week:_ Change your price for 1-2 weeks with no notifications and watch effect on revenue
 * _Sales cycle > 1 week:_ Increase price but offer to mailing list at old price for 7 days, then after a few weeks, check if revenues have increased. Then decrease price and watch revenue. If no change, back to original price.
+
+#Chapter 4 - Building a Killer Sales Site
+
+The **sales funnel** where the chances of converting people who see your URL into buyers are slim:
+
+\ 	People who see your URL	 /
+ \						|							/
+  \ 	 Click your URL			 /
+	 \					|						/
+	  \  Potential client  /
+		 \				|					/
+		  \			Buyers		 /
+			 \							/
+
+* **Don't plan to sell to a customer on their first visit**
+	* Convincing someone to _give you their email address is much easier_ than convincing them to buy your product
+	* Establish _trust_ and give them a _reward_ for signing up to your mailing list
+
+**Know your customer:**
+1. What keeps them awake at night?
+2. Top 3 frustrations?
+3. What do they desire most?
+4. How have people who have tried to sell them something similar failed or succeeded?
+
+_Any_ page they land on should have a prominent call to enter their email address.
+
+The key pages are Home, Tour, Testimonials, Contact Us and Purchase + Pricing; they should all be accessible with **at most 2 clicks** from anywhere else.
+
+To **find your hook**:
+* Explain what your product does and for whom?
+* Promise benefit to customers, e.g. 'Save time. Get paid faster.'
+* Feature - the single most remarkable feature of your product
+
+**Email marketing tips**
+- Test yourself but usually emails on _Tuesdays, Wednesdays & Thursdays_ are best, between _07h00 and 10h30_
+- _Never send attachments_ - link to files if you have to
+- Subject line should be _under 7 words_
+- _One goal_ for each email - relationship building or call to action: sales should only happen every 4th or 5th email.
