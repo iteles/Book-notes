@@ -1,3 +1,5 @@
+Examples of code in these notes are, as a general rule, copied from the book directly as these proved very apt at explaining the surrounding wording.
+
 #Chapter 1 - Introduction to AngularJS
 
 Interesting points to note:
@@ -34,4 +36,49 @@ The script can be loaded using Google's [CDN](http://en.wikipedia.org/wiki/Conte
 
 * Put simply, the **model** includes the standard variables you create like strings and arrays, the **views** are the HTML templates with things in {{curly brackets}} for data binding and the **controllers** are the Javascript classes you write to control the relationship between you model and your views
 
-* The right way to **define a controller** is as part of a **module** in your js file so that you're creating a namespace for it rather than adding it as a function to the global scope 
+* The right way to **define a controller** is as part of a **module** in your js file so that you're keeping it _out of the global namespace_
+
+Angular event handlers are different from the standard Javascript handlers in that they _do not operate in the global namespace_ and Angular deals with cross-browser differences for you.
+* The `ng-bind` directive is used to update text - it has two equivalent forms: `<p ng-bind="greeting"></p>` and `<p>{{greeting}}</p>`
+  * **For the index.html page _always_ use ng-bind for your data binding**, otherwise the user might see the HTML page without your data first; everywhere else you can use the {{curly brackets}} syntax
+* To keep fields updated no matter how they updated (via server or user input), use the $scope function `$watch()`
+  * You call `$watch()` first with the expression to observe and then the callback which is called when the expression changes
+  * `$scope.$watch('funding.startingEstimate', computeNeeded); //watch the expression 'funding.startingEstimate and call computeNeeded() when it changes'` - note the expression to watch is in quotes
+* `ng-repeat` allows you to iterate through an array and also gives you a reference to your location within the array through the use of `$index` (also $first, $middle, and $last)
+* You can use `ng-submit` to call a function when a form submits
+  * You would use `ng-submit` on the form element itself and it also keeps the browser from carrying out the default POST action on submit
+* Other event-handling directives include `ng-click` (instead of 'onclick') and `ng-dblclick`, etc
+```javascript
+//using ng-click for example within a form would look like this:
+<button ng-click="reset()">Reset</button>
+
+//the javascript would then look like this:
+$scope.reset = function() {
+  $scope.parameterToReset = 0;
+}
+```
+* `ng-show` and `ng-hide` function by setting the CSS element styles to `display:block` and `display:none`
+* `ng-class` can be used to conditionally create a class name (for example, when a button is cliked) which then changes the styling of that element via CSS
+```javascript
+<table ng-controller='RestaurantTableController'>
+  //where ng-class add the class 'selected' to <tr> element based on the result of $index==selectedRow
+  <tr ng-repeat='restaurant in directory' ng-click='selectRestaurant($index)' ng-class='{selected: $index==selectedRow}'>
+    <td>{{restaurant.name}}</td>
+    <td>{{restaurant.cuisine}}</td>
+  </tr> </table>
+
+//in the javascript we would have:
+function RestaurantTableController($scope) {
+//dummy data for the purposes of this example
+$scope.directory = [{name:'The Handsome Heifer', cuisine:'BBQ'},
+                    {name:'Green's Green Greens', cuisine:'Salads'},
+                    {name:'House of Fine Fish', cuisine:'Seafood'}];
+
+$scope.selectRestaurant = function(row) { $scope.selectedRow = row;};
+}
+
+//and in the CSS
+.selected {
+background-color: lightgreen;
+}
+```
