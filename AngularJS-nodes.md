@@ -71,10 +71,12 @@ $scope.reset = function() {
 function RestaurantTableController($scope) {
 //dummy data for the purposes of this example
 $scope.directory = [{name:'The Handsome Heifer', cuisine:'BBQ'},
-                    {name:'Green's Green Greens', cuisine:'Salads'},
+                    {name:'Greens Green Greens', cuisine:'Salads'},
                     {name:'House of Fine Fish', cuisine:'Seafood'}];
 
-$scope.selectRestaurant = function(row) { $scope.selectedRow = row;};
+//assigns the row that is clicked on to $scope.selectedRow (which is then compared to the $index)
+$scope.selectRestaurant = function(row) {
+  $scope.selectedRow = row;};
 }
 
 //and in the CSS
@@ -82,3 +84,14 @@ $scope.selectRestaurant = function(row) { $scope.selectedRow = row;};
 background-color: lightgreen;
 }
 ```
+* For images and URLs you should use `ng-src` and `ng-href` and you can then use the {{curly brackets}} for data binding as usual
+* You can also do simple math or comparisons in templates but I wouldn't unless absolutely necessary to keep the separations intact
+
+>Controllers have three responsibilities in your app:
+>• Set up the initial state in your application’s model
+>• Expose model and functions to the view (UI template) through $scope
+>• Watch other parts of the model for changes and take action
+
+**Controllers**
+* Use _one controller per function_ in your view to keep them small and manageable
+* When using nested controllers, the $scope passed to the child controller has access to all the properties of $scope passed to the parent controller
