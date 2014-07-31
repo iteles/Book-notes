@@ -95,3 +95,6 @@ background-color: lightgreen;
 **Controllers**
 * Use _one controller per function_ in your view to keep them small and manageable
 * When using nested controllers, the $scope passed to the child controller has access to all the properties of $scope passed to the parent controller
+
+**Data**
+* Angular only considers data to be part of the _model_ when it can be accessed through the $scope
