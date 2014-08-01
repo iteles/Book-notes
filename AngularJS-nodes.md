@@ -98,3 +98,15 @@ background-color: lightgreen;
 
 **Data**
 * Angular only considers data to be part of the _model_ when it can be accessed through the $scope
+* `$scope` can be defined in 3 ways:
+  * Through the standard format we've seen until now, in the javascript
+  * Through expressions such as `<button ng-click='count=3'>Set count to three</button>`
+  * Through using `ng-model` on a form
+
+**$watch()**
+The `$watch()` function is possibly the most used scope function: `$watch(watchFunction, watchAction, deepWatch)`
+- _watchFunction_ is an Angular expression or function that is being watched for changes
+- _watchAction_ is an Angular expression or function that is carried out when the _watchFunction_ changes
+- If _deepWatch_ is set to true it examines each object within the _watchFunction_
+
+Using the `dreg();` function after the `$watch()` function de-registers the event listener
