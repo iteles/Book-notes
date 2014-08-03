@@ -155,3 +155,45 @@ To **find your hook**:
 - _Never send attachments_ - link to files if you have to
 - Subject line should be _under 7 words_
 - _One goal_ for each email - relationship building or call to action: sales should only happen every 4th or 5th email.
+
+#Chapter 5 - Startup Marketing
+
+You want **quality traffic** (visitors close to your ideal customer) as opposed to just 'traffic'.
+
+What will sustain a business:
+1. A mailing list
+2. Blog, podcast or video blog
+3. Organic search
+	 Everything else is _suplemental_ traffic.
+
+**Mailing list**
+A mailing list should be the _number 1 goal of your website_.
+
+Content:
+* Monitor current events + help keep your customers up-to-date
+* Answer FAQs from users in your newsletter
+* Short email interviews with a customer
+* Hire a writer occasionally to put together an article on a relevant topic
+
+**Blog, podcast or video blog**
+For blogs, if you don't have unique insight or expertise, partner with someone who does.
+> Cater to both humans and search engines.
+Blogs and mailing lists _don't even come near the level of engagement of podcasts_ - if you want to get into this, just start with 'Podcasting for Dummies' [or [this simple post on how to launch a podcast from Elise Blaha Cripe](http://eliseblaha.typepad.com/golden/2014/04/how-to-launch-a-podcast.html)]
+
+**Organic Search**
+SEO has two components - on-page factors and incoming links
+* _On-page factors:_ page titles, meta tags, URL structures, etc. Learn about this in 'SEO: an hour a day'.
+* _Incoming links:_
+	* Ideal links are from older sites with high page ranks
+	* Make sure you avoid setting off red flags by:
+		* Focusing 50% of your text on key search terms and vary other between 3-5 terms
+		* Building links slowly and steadily
+		* Staying away from link farms
+
+_Link Building:_
+1. Submit to directories (like DMOZ and Gimpsy) and local directories
+2. Use Yahoo Site Explorer to check who is linking to your competitors, they'll be interested in you too [which has now been merged into [Bing Webmaster Tools](http://www.bing.com/toolbox/webmaster)]
+3. Set up **google alerts** for your and your competitor's product names
+4. Publish 500-700 word articles to repositories
+5. Offer **free versions** of your product to **academic** & **NGO** institutions
+6. Offer to write a testimonial for a company whose product you use for a link back to yours.
