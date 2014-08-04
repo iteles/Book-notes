@@ -197,3 +197,39 @@ _Link Building:_
 4. Publish 500-700 word articles to repositories
 5. Offer **free versions** of your product to **academic** & **NGO** institutions
 6. Offer to write a testimonial for a company whose product you use for a link back to yours.
+
+#Chapter 6 - Virtual Assistants & Outsourcing
+>Performing tasks you could pay someone else $6 to accomplish is a foolish use of an entrepreneur's time.
+**Big thing:** workgin on a small team, you can't afford to throw away time.
+>As a startup, you'll have **plenty of time** before you need to scale and you may never need to scale at all if your idea doesn't work.
+
+So what are the tasks you can **avoid automating**? Monthly billing reminder emails?
+Instead of spending the time upfront building a system to do it, can a **human being do this manually for now* for $6/hour (a VA) and then you automate once it's costing you more because you've scaled?
+
+**When is a VA helpful?**
+1. _When proving your product_: It might take a week to code up the automation of a task, but it could instead take you 1-2 hours of time to write out the process and have a VA carry that piece out manually for now whilst you're proving your product works. Outsourcing also provides a written process for the task that you might not otherwise have.
+You want to iterate and **learn**. Get the _feature out the door to your customers_ - by doing this through a VA you can save 50-80% of development time - and then **automate it _if your customers decide to use it_!**
+2. _After product launch_:
+>Customers make it necessary to put processes in place for marketing, sales, support and back-end administrative tasks.
+Anything that can be written as a process can be outsourced - otherwise it's getting in the way of things that are truly productive for your business.
+
+_Examples of what can be automated:_
+- Level 1 email support & sales questions
+- Manning live chat windows on website
+- Directory submissions
+- Running month end reports
+- Minor HTML tweaks
+- Keyword research
+- Link building
+- Following up on cancelled subscriptions (or baskets that didn't check out, with a discount offer)
+
+**Choosing a VA**
+Getting them to send you examples of written pieces is often useless as these can be heavily edited.
+* Exchange 3-5 emails with them & ask them 2-3 basic interview questions
+	* Get a feel for ther English and how well you understand each other
+* Do this with 3-5 VAs at the same time to speed up the process
+
+**When delegating:**
+* Back _everything_ up first
+* Use screenshots or screencasts ([Jing Project](http://www.jingproject.com) recommended for screencasts)
+* Timebox: work for 1 hour then update me on progress - if it's taking them longer than you think it should, _ask how you can help_.
