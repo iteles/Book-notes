@@ -107,10 +107,10 @@ background-color: lightgreen;
 The `$watch()` function is possibly the most used scope function: `$watch(watchFunction, watchAction, deepWatch)`
 - _watchFunction_ is an Angular expression (passed in as a 'string') or function that is being watched for changes
 - _watchAction_ is an Angular expression or function that is carried out when the _watchFunction_ changes
-- If _deepWatch_ is set to true it examines each object within the _watchFunction_
+- If _deepWatch_ is set to true it examines each object within the _watchFunction_ (so if the watchFunction is an array, it walks all the properties for the array)
 
 Using the `dreg();` function after the `$watch()` function de-registers the event listener
 
 The most performance-efficient way of using `$watch()` can sometimes be to set up a watch run every time Angular evaluates the page (avoiding expensive data binding where certain functions are run multiple times)
 
-To **watch multiple items** you can either put them in an array (and pass in `deepWatch` as true in your `$watch()` function) or pass in a concatenated set of properties, for ex ` $scope.$watch('things.a + things.b', callMe(...));`
+To **watch multiple items** you can either put them in an array (and pass in `deepWatch` as true in your `$watch()` function) or pass in a concatenated set of properties, for example to watch all the values in the things array ` $scope.$watch('things', callMe(...), true);` (setting deepWatch to true then means that any changes to any items in the _things_ array will trigger the _callMe()_ function)
