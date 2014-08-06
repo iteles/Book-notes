@@ -114,3 +114,6 @@ Using the `dreg();` function after the `$watch()` function de-registers the even
 The most performance-efficient way of using `$watch()` can sometimes be to set up a watch run every time Angular evaluates the page (avoiding expensive data binding where certain functions are run multiple times)
 
 To **watch multiple items** you can either put them in an array (and pass in `deepWatch` as true in your `$watch()` function) or pass in a concatenated set of properties, for example to watch all the values in the things array ` $scope.$watch('things', callMe(...), true);` (setting deepWatch to true then means that any changes to any items in the _things_ array will trigger the _callMe()_ function)
+
+In large 'real world' apps, putting functions in controllers quickly becomes un-manageable. To avoid the controllers becoming a dumping ground for anything we need, we use **modules** instead:
+* Provide a way to group dependencies for a functional area within your app
