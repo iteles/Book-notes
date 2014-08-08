@@ -115,5 +115,26 @@ The most performance-efficient way of using `$watch()` can sometimes be to set u
 
 To **watch multiple items** you can either put them in an array (and pass in `deepWatch` as true in your `$watch()` function) or pass in a concatenated set of properties, for example to watch all the values in the things array ` $scope.$watch('things', callMe(...), true);` (setting deepWatch to true then means that any changes to any items in the _things_ array will trigger the _callMe()_ function)
 
+**Modules**
 In large 'real world' apps, putting functions in controllers quickly becomes un-manageable. To avoid the controllers becoming a dumping ground for anything we need, we use **modules** instead:
 * Provide a way to group dependencies for a functional area within your app
+* Avoids the problem of duplicating code when multiple controllers need to access the same information on the server
+* Automatically resolve dependencies (through dependency injection) so there is no need too run an actual server (which would cause a performance issue) or patch in dummy data for unit testing
+
+Modules mean your code can look like this:
+```javascript
+function ShoppingController($scope, Items) {
+      $scope.items = Items.query();
+    }
+```
+Instead of like this:
+```javascript
+function ItemsViewController($scope) {
+      // make request to server
+      // parse response into Item objects
+      // set Items array on $scope so the view can display it
+    }
+```
+But what is the `Items` object passed to the module example above? It's a **service**.
+>Services are singleton (single-instance) objects that carry out the tasks necessary to support your application’s functionality.
+Angular comes with in-built services like $local for inter-acting with the browser's location or $route for changing the view based on URLs, but _you should also write services to carry out the functionality that is unique to your app_. They can be shared across controllers and are a **great tool for sharing state**.
