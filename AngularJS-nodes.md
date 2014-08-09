@@ -138,3 +138,5 @@ function ItemsViewController($scope) {
 But what is the `Items` object passed to the module example above? It's a **service**.
 >Services are singleton (single-instance) objects that carry out the tasks necessary to support your application’s functionality.
 Angular comes with in-built services like $local for inter-acting with the browser's location or $route for changing the view based on URLs, but _you should also write services to carry out the functionality that is unique to your app_. They can be shared across controllers and are a **great tool for sharing state**.
+
+The parameters passed in as strings are also order-independent.
