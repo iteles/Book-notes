@@ -140,3 +140,24 @@ But what is the `Items` object passed to the module example above? It's a **serv
 Angular comes with in-built services like $local for inter-acting with the browser's location or $route for changing the view based on URLs, but _you should also write services to carry out the functionality that is unique to your app_. They can be shared across controllers and are a **great tool for sharing state**.
 
 The parameters passed in as strings are also order-independent.
+
+**Data filters**
+Data filters allow you to define how to transform your data from within the template - the key thought process here is that you would do this within your view (instead of your controller or model) because it's for things that are only important when displaying the data to humans but make no difference to the logic in your controller (like adding a dollar sign for currency for example).
+Format: `{{angularExpression | filterName : parameter1 : parameter2 ... | filterName2 ...}}`
+
+You can add more than one data filter to an expression by adding pipe symbols in the binding.
+
+You can also easily create your own filters using the format:
+```javascript
+var homeModule = angular.module('HomeModule', []); homeModule.filter('titleCase', function() {
+var titleCaseFilter = function(input) {
+￼//javascript code
+};
+return titleCaseFilter; });
+
+//the view would be as follows
+<body ng-app='HomeModule' ng-controller="HomeController">
+  <h1>{{pageHeading | titleCase}}</h1>
+</body>
+```
+The `pageHeading` would be inserted via a controller in this heading.
