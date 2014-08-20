@@ -7,14 +7,14 @@ _Node Package Manager_ (NPM) allows you to download, install and manage third pa
 
 
 NPM can install packages:
-	* **Global mode** which should only be used for modules that must always be available globally
-		* To install a module use `$ npm install -g <package name>` or `$ sudo npm install -g <package name>`
-		* In you need this module in any Node script you can write `var packagename = require ('<package name>')`
-		* Any executable files are stored under `/usr/local/bin`
-	* **Local mode** is the default mode and NPM installs the package in the a `/node_modules` folder in the current directory
-		* A local module will **always take precedence** over a global module
-		* Always use local mode if in doubt
-		* Any executable files are stored under `/node_modules/.bin`
+* **Global mode** which should only be used for modules that must always be available globally
+	* To install a module use `$ npm install -g <package name>` or `$ sudo npm install -g <package name>`
+	* In you need this module in any Node script you can write `var packagename = require ('<package name>')`
+	* Any executable files are stored under `/usr/local/bin`
+* **Local mode** is the default mode and NPM installs the package in the a `/node_modules` folder in the current directory
+	* A local module will **always take precedence** over a global module
+	* Always use local mode if in doubt
+	* Any executable files are stored under `/node_modules/.bin`
 
 From the command line:
 * `$ npm install <package name>` installs latest version of package **and the packages it depends on**
@@ -40,10 +40,10 @@ module.exports = Circle; //determining what will be exported to other scripts
 //Here we export the Circle constructor function, but more than one thing can be exported from a single module
 ```
 Loading various module types:
-	* **Core module** - refered to solely by name, not by file path
-	* **File module** - non-core module which can be loaded by providing the absolute path in the `require` statement
-	* **Folder module** - providing a path for a folder in the `require` statement; this folder _must_ include a `package.json` file defining what should be loaded
-	* If you use modulename.js in the `require` statement without a path, Node will look for the file in the /node_modules folder of the current directory; if it doesn't find the module, it will keep searching parent modules until it reaches the root folder
+* **Core module** - refered to solely by name, not by file path
+* **File module** - non-core module which can be loaded by providing the absolute path in the `require` statement
+* **Folder module** - providing a path for a folder in the `require` statement; this folder _must_ include a `package.json` file defining what should be loaded
+* If you use modulename.js in the `require` statement without a path, Node will look for the file in the /node_modules folder of the current directory; if it doesn't find the module, it will keep searching parent modules until it reaches the root folder
 
 Modules are **initialized only once** and cached the first time, no matter how many times they are loaded with the `require` statement
 
@@ -188,7 +188,7 @@ This response (res) object is used to reply to the client. You can use:
 * `res.write(contents)` to write text or a buffer to the body of the response
 
 You can pipe any readStream into the response. If you wanted to pipe in a movie for example, you would create the readStream with `var rs = fs.createReadStream('test.mp4')` and then pipe it in using `rs.pipe(res);`.
-If you then open your browser to the port you bound the server to, the movie should start playing straight away even though it hasn't fully loaded because Node uses _HTTP chunked encoding_
+If you then open your browser to the port you bound the server to, the movie should start playing straight away even though it hasn't fully loaded because Node uses _HTTP chunked encoding_.
 
 You can also pipe in another process (such as a child process for example).
 
