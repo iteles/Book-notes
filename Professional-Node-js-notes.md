@@ -210,6 +210,59 @@ _Skimmed through this chapter as not immediately relevant to what I'm doing, may
 ##Chapter 13 - Making HTTP Requests
 > HTTP has become the preferred way of serving and consuming public-facing API calls.
 
+When the HTTP server response comes back from the server, the response event is fired, passing along the _response object_ which is an instance of `http.ClientResponse`. We can then inspect its attributes using things like `response.statusCode` and `response.headers`.
+
+I've added a [basic example of an HTTP Request with explanatory comments](https://github.com/iteles/learning/blob/master/Professional-Node-js-exercises/08-ch13-basic-http-req.js) to my 'learning' folder. However, we should really use the [request module](#request) discussed further down.
+
+HTTP response is also a **readable stream** containing the body of the response, so you can pipe it into an open file:
+```javascript
+//require 'http', 'fs' and set up request options (host, port, path and method)
+var file = fs.writeStream('test.txt');
+
+http.request(options, function(response){
+	response.pipe(file);
+}).end(); //must end request otherwise server will no respond
+```
+Internally, Node uses an _agent_ to make and manage HTTP requests for you
+* When a request is made, the agent asks to keep that connection alive and closes the socket when the request is complete
+* If you want to keep an HTTP request open for a long time, you can remove it from the agent's pool by doing:
+```javascript
+//when an available or new socket is selected for a request,
+//the request emits a socket event
+request.on('socket', function(socket){
+	socket.emit('agentRemove');
+});
+```
+* You are allowed a **maximum of 5 sockets** for each host-port pair, so under heavy load, Node will allocate the requests coming in to the existing 5 sockets (which will be reused by the new request)
+	* You can change the maximum number of sockets (globally) using `http.Agent.defaultMaxSockets = 10;`
+	* You can change the max number of sockets for a specific agent by specifying `maxSockts: 10` in the agent options
+
+<a name="request"/>
+####Request Module
+Whilst the Node HTTP client is powerful, it also means you have to deal with a whole raft of issues (such as what to do if the response is a redirect) manually. To avoid this, **you should use the [request module](https://www.npmjs.org/package/request), the 'work-horse' of Node HTTP apps**.
+
+The basic format of the request is:
+```javascript
+request('URL',
+	function(error, response, body){
+		//code goes here
+	});
+```
+Instead of using a string containing the URL as above, you can also use an options object containing many arguments (a list of accepted arguments is also in the book, p.119):
+```javascript
+var options = {
+	url: "http://localhost:4001/abc",
+	method: "DELETE",
+	headers: {Accept: 'application/json'},
+	body: new Buffer('Hellow world!')
+};
+```
+Using just `request` as in the format example above performs a GET request but it can also be followed be followed by `.put(url)`, `.post(url)`, `.head(url)` (issues a HEAD request) or `.del(url)`.
+
+
+
+
+
 
 
 [Interesting link on what Node.js is and why you would use it](http://www.toptal.com/nodejs/why-the-hell-would-i-use-node-js)
