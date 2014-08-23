@@ -233,3 +233,17 @@ Getting them to send you examples of written pieces is often useless as these ca
 * Back _everything_ up first
 * Use screenshots or screencasts ([Jing Project](http://www.jingproject.com) recommended for screencasts)
 * Timebox: work for 1 hour then update me on progress - if it's taking them longer than you think it should, _ask how you can help_.
+
+#Chapeter 7
+Two options:
+**GROW** your existing business (list of resouces to do so like [meetup.com](http://www.meetup.com) and blogs to reach out to on p.183) **or**
+**START OVER** - You can keep your first startup running in the background and start a new one (or sell the first on altogether before you start a new one)
+* Diversifies your sources of income + reduces risk
+* Leverage your experience across industries
+* NOTE: Outsourcing or automation are _critical_ if you're running 2 products/businesses at once
+	* Author recommends automating your product over selling it
+
+**Keep track of everything even if you don't plan on selling:**
+* Revenue & expenses _(do these monthly)_
+* Monitor your product name with Google alerts so when potential buyers google you, you know nothing nasty will come up
+* Track hours spent (author recommends [Slim Timer](http://slimtimer.com/))
