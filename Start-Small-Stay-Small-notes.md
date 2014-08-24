@@ -1,3 +1,14 @@
+##Table of Contents
+* [Chapter 1 - The Chasm Between Develop & Entrepreneur](#Chapter1)
+* [Chapter 2 - Why Niches are the Name of the Game](#Chapter2)
+* [Chapter 3 - Your Product](#Chapter3)
+* [Chapter 4 - Building a Killer Sales Website](#Chapter4)
+* [Chapter 5 - Startup Marketing](#Chapter5)
+* [Chapter 6 - Virtual Assistants & Outsourcing](#Chapter6)
+* [Chapter 7 - Grow it or Start Over](#Chapter7)
+
+
+<a name="Chapter1"/>
 #Chapter 1 - The Chasm Between Develop & Entrepreneur
 
 Seeking *venture capital creates 2 kinds of problems*:
@@ -53,7 +64,8 @@ _Most common roadblocks:_
 
 > Market comes 1st, marketing 2nd, aesthetics 3rd and functionality a distant 4th.
 
-#Chapter 2
+<a name="Chapter2"/>
+#Chapter 2 - Why Niches are the Name of the Game
 
 The key is that **people must be willing to pay for your product** - market first.
 
@@ -91,6 +103,7 @@ Always _go for a niche market_ because:
 - Set up a mini sales site and take out an ad on Google Adwords
 - Assume a 2-5% conversion for free trials and 40% conversion for people who click 'Buy Now' on your site
 
+<a name="Chapter3"/>
 #Chapter 3 - Your Product
 Product Success Triangle - each of these has _equal weighting_:
 * Product
@@ -98,7 +111,7 @@ Product Success Triangle - each of these has _equal weighting_:
 * Execution - marketing, selling and support
 
 Your first product should take between **200 and 400 hours**.
-	- Consider whether it's worth _hiring out_ people to build your product, especially if you have a day job
+- Consider whether it's worth _hiring out_ people to build your product, especially if you have a day job
 
 **Pricing Model** (product categories):
 * Dealing with _hobbies_: max $29 fixed price or $14/month
@@ -118,6 +131,7 @@ Your first product should take between **200 and 400 hours**.
 * _Sales cycle < 1 week:_ Change your price for 1-2 weeks with no notifications and watch effect on revenue
 * _Sales cycle > 1 week:_ Increase price but offer to mailing list at old price for 7 days, then after a few weeks, check if revenues have increased. Then decrease price and watch revenue. If no change, back to original price.
 
+<a name="Chapter4"/>
 #Chapter 4 - Building a Killer Sales Site
 
 The **sales funnel** where the chances of converting people who see your URL into buyers are slim:
@@ -156,6 +170,7 @@ To **find your hook**:
 - Subject line should be _under 7 words_
 - _One goal_ for each email - relationship building or call to action: sales should only happen every 4th or 5th email.
 
+<a name="Chapter5"/>
 #Chapter 5 - Startup Marketing
 
 You want **quality traffic** (visitors close to your ideal customer) as opposed to just 'traffic'.
@@ -178,6 +193,7 @@ Content:
 **Blog, podcast or video blog**
 For blogs, if you don't have unique insight or expertise, partner with someone who does.
 > Cater to both humans and search engines.
+
 Blogs and mailing lists _don't even come near the level of engagement of podcasts_ - if you want to get into this, just start with 'Podcasting for Dummies' [or [this simple post on how to launch a podcast from Elise Blaha Cripe](http://eliseblaha.typepad.com/golden/2014/04/how-to-launch-a-podcast.html)]
 
 **Organic Search**
@@ -198,19 +214,23 @@ _Link Building:_
 5. Offer **free versions** of your product to **academic** & **NGO** institutions
 6. Offer to write a testimonial for a company whose product you use for a link back to yours.
 
+<a name="Chapter6"/>
 #Chapter 6 - Virtual Assistants & Outsourcing
 >Performing tasks you could pay someone else $6 to accomplish is a foolish use of an entrepreneur's time.
-**Big thing:** workgin on a small team, you can't afford to throw away time.
+
+**Big thing:** working on a small team, you can't afford to throw away time.
+
 >As a startup, you'll have **plenty of time** before you need to scale and you may never need to scale at all if your idea doesn't work.
 
 So what are the tasks you can **avoid automating**? Monthly billing reminder emails?
-Instead of spending the time upfront building a system to do it, can a **human being do this manually for now* for $6/hour (a VA) and then you automate once it's costing you more because you've scaled?
+Instead of spending the time upfront building a system to do it, can a **human being do this manually for now** for $6/hour (a VA) and then you automate once it's costing you more because you've scaled?
 
 **When is a VA helpful?**
 1. _When proving your product_: It might take a week to code up the automation of a task, but it could instead take you 1-2 hours of time to write out the process and have a VA carry that piece out manually for now whilst you're proving your product works. Outsourcing also provides a written process for the task that you might not otherwise have.
 You want to iterate and **learn**. Get the _feature out the door to your customers_ - by doing this through a VA you can save 50-80% of development time - and then **automate it _if your customers decide to use it_!**
 2. _After product launch_:
 >Customers make it necessary to put processes in place for marketing, sales, support and back-end administrative tasks.
+
 Anything that can be written as a process can be outsourced - otherwise it's getting in the way of things that are truly productive for your business.
 
 _Examples of what can be automated:_
@@ -234,16 +254,20 @@ Getting them to send you examples of written pieces is often useless as these ca
 * Use screenshots or screencasts ([Jing Project](http://www.jingproject.com) recommended for screencasts)
 * Timebox: work for 1 hour then update me on progress - if it's taking them longer than you think it should, _ask how you can help_.
 
-#Chapeter 7
+<a name="Chapter7"/>
+#Chapter 7 - Grow it or Start Over
 Two options:
 **GROW** your existing business (list of resouces to do so like [meetup.com](http://www.meetup.com) and blogs to reach out to on p.183) **or**
 **START OVER** - You can keep your first startup running in the background and start a new one (or sell the first on altogether before you start a new one)
 * Diversifies your sources of income + reduces risk
 * Leverage your experience across industries
-* NOTE: Outsourcing or automation are _critical_ if you're running 2 products/businesses at once
+* _NOTE:_ Outsourcing or automation are _critical_ if you're running 2 products/businesses at once
 	* Author recommends automating your product over selling it
 
 **Keep track of everything even if you don't plan on selling:**
 * Revenue & expenses _(do these monthly)_
 * Monitor your product name with Google alerts so when potential buyers google you, you know nothing nasty will come up
 * Track hours spent (author recommends [Slim Timer](http://slimtimer.com/))
+
+
+-- End of book & of notes --
