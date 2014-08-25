@@ -161,3 +161,5 @@ return titleCaseFilter; });
 </body>
 ```
 The `pageHeading` would be inserted via a controller in this heading.
+
+###AUGUST update: The more I read about Angular, the less keen I am to wrap my HTML in a bunch of proprietary directives. For the immediate future I will be exploring other JS frameworks and may come back to Angular after that. 
