@@ -1,5 +1,2 @@
 #Unnecessary Mac store file
 .DS_Store
-
-#Node modules installed through package.json
-node_modules
