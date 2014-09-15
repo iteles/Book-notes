@@ -4,6 +4,10 @@ These notes are very much just the things I jotted down whilst I was going throu
 * [Part 1 - Why are we here?](#part1)
 * [Part 2 - Setting a vision](#part2)
 * [Part 3 - Four strategies for simplicity](#part3)
+* [Part 4 - Remove](#part4)
+* [Part 5 - Organize](#part5)
+* [Part 6 - Hide](#part6)
+* [Part 7 - Displace](#part7)
 
 <a name="part1"/>
 #Part 1 - Why are we here?
@@ -66,3 +70,13 @@ An interesting example of a user experience story from p.38 of the book:
 
 <a name="part3"/>
 #Part 3 - Four strategies for simplicity
+Good tip: **when interviewing someone for a job as a designer**, ask them to take something unnecessarily complicated and _simplify it_.
+
+Each of these will be discussed in detail in the following chapters:
+* [**Remove**](#part4) unnecessary features
+* [**Organize**](#part5) in a way that makes more sense than the current organization (grouping, for example)
+* [**Hide**](#part6) all but the most important or frequently used features
+* [**Displace**](#part7) by moving the onus of features to another device (even if that 'device' is the user)
+
+<a name="part4"/>
+#Part 4 - Remove
