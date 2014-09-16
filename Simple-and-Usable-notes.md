@@ -80,3 +80,13 @@ Each of these will be discussed in detail in the following chapters:
 
 <a name="part4"/>
 #Part 4 - Remove
+>According to a 2002 study by Standish Group, 64 percent of software features are "never or rarely used"
+* Don't cut features just because they're too difficult to build
+* _Do_ cut features that are poorly implemented - remember that if it's broken, it'll probably get fixed, but if it's just shoddy, it'll probably be around for a _very_ long time
+* Don't ask "shall we get rid of it?", ask **"Why should we keep it?"**
+* Actually speak to your users to see what they will or won't do with your software, don't sit around thinking about 'what if the user wants to...?'
+* If solving a problem leads to a particularly complex process feature-wise, "is there another way to solve the problem?"
+* Once a customer _has_ a product, their preferences change from 'having more features' to 'being more usable' - so in the long run, **usability is king**, more so than a feature list
+* Focus on **absolutely delighting your users with core tasks** and aim to please on secondary tasks
+* Judge your product on how well it suits your users' needs (not its feature list)
+  * To do this, always list your users' needs _and prioritize them_
