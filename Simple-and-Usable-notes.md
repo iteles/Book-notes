@@ -81,6 +81,7 @@ Each of these will be discussed in detail in the following chapters:
 <a name="part4"/>
 #Part 4 - Remove
 >According to a 2002 study by Standish Group, 64 percent of software features are "never or rarely used"
+* This strategy is about **removing distractions** so your users can **focus on your project** or call to action
 * Don't cut features just because they're too difficult to build
 * _Do_ cut features that are poorly implemented - remember that if it's broken, it'll probably get fixed, but if it's just shoddy, it'll probably be around for a _very_ long time
 * Don't ask "shall we get rid of it?", ask **"Why should we keep it?"**
@@ -90,3 +91,16 @@ Each of these will be discussed in detail in the following chapters:
 * Focus on **absolutely delighting your users with core tasks** and aim to please on secondary tasks
 * Judge your product on how well it suits your users' needs (not its feature list)
   * To do this, always list your users' needs _and prioritize them_
+* "Lighten the load" on your users by removing unnecessary content and distractions so they can **focus** on the important things
+  * Options and preferences are usually goo things to remove from your main page or altogether
+* Check error logs regularly for common errors, then remove these to simplify your users' experience
+* Limit visual clutter by using thin lines, white space and limiting the variation in sizes of elements
+* Remove unneccessary instructions ('fill in this form and click submit to send it to us') and introductions ('Welcome to my website, I hope you like it')
+* Simplify text and boil it down to the main content
+* Beware of **removing too many options**, people still need to feel they have a level of control over their experience
+  * The example given in the book is the Apple Store in Tokyo where the elevators have no buttons, it just stops at every floor
+
+<a name="part5"/>
+#Part 5 - Organize
+* For a simple design, it's important to **emphasize just one or two important things** so your user is never in any doubt as to where to start
+* 
