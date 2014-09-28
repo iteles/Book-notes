@@ -102,9 +102,9 @@ Mixins are fantastic for **passing in arguments** and for **complex logic** CSS.
 
 <a name="sass-extend"/>
 ###@extend directive
-If you do just want to do something simple like re-use a snippet of code, you can also use `@extend`.
+If you do just want to do something simple like re-use a snippet of code within the same file, you can also use `@extend`.
 * You can @extend an existing class, for example `.menu{ @extend .full-width-bar;}`
-* Or you can create a selector which won't show up in your code, it'll just be a placeholder for some CSS, for example:
+* Or you can create a selector which won't show up in your code, it'll **just be a placeholder** for some CSS, for example:
 ```css
 %full-width-bar {
   height: 4em;
