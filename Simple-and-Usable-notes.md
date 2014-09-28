@@ -103,4 +103,16 @@ Each of these will be discussed in detail in the following chapters:
 <a name="part5"/>
 #Part 5 - Organize
 * For a simple design, it's important to **emphasize just one or two important things** so your user is never in any doubt as to where to start
-* 
+* If you have _a lot_ of features on items, **chunk them** into smaller groups of item (like Microsoft Word grouping functionality into 9 menu items for example)
+  * Although research suggests the mind can only hold up to 4 items, but most people apply chunking into **groups of 7 items**
+* **Organize your site based on your user's behaviour**
+  * If there is one main task where users are going to spend the majority of their time (shopping on a grocery site for example), that should be _the most prominent part_ of your site
+  * Think about what your users are going to want to do on your site and _organize it into those sections_
+  * People usually **expect things in a particular sequence** so it's very frustrating when that sequence is broken (usually by a registration process)
+* Use **labels that make sense to your audience** - make sure they have 'hard edges' and aren't fuzzy
+  * _Ask a handful of users to organize the items into categories_ & if they all have different answers, you're in trouble!
+* Try to organize by category as **alphabetising is problematic** as users often don't know the exact word to look for
+* Users usually **prefer browsing via links to searching** and will only really search for items when the links don't look like they'll get them to where they want to be
+* **Setting events on a timeline** can often be powerful, but works best when _events are of a similar duration_ (so users don't have to keep zooming in and out to get the details) and only for situations where you don't end up with some super busy areas and lots of dead space around that
+* **Use grids**: lining items up makes things look neater and draws a user's eyes across a screen as items out of line are distracting (good example of a redesign of a form using a grid on p.127)
+  * If you want it to feel less regimented, have some elements straddle several columns of the grid or pick an uneven (assymetric) number of columns
