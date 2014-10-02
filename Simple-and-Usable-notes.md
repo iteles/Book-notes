@@ -116,3 +116,18 @@ Each of these will be discussed in detail in the following chapters:
 * **Setting events on a timeline** can often be powerful, but works best when _events are of a similar duration_ (so users don't have to keep zooming in and out to get the details) and only for situations where you don't end up with some super busy areas and lots of dead space around that
 * **Use grids**: lining items up makes things look neater and draws a user's eyes across a screen as items out of line are distracting (good example of a redesign of a form using a grid on p.127)
   * If you want it to feel less regimented, have some elements straddle several columns of the grid or pick an uneven (assymetric) number of columns
+* Make **important things big** even if that means making them out of scale (like making a golf ball the same size as a football on your screen) - you don't want non-important things stealing the attention away from the important ones just because they are bigger
+* Put **similar things** close together - this may sound simple but it _reduces the need for lots of unnecessary extra video cues like colour coding_
+* Tip: on **touch screens, place the main navigation at the bottom**, this way users can touch it _without covering the screen_ with their hand
+* **Perceptual layering** is used on London tube maps, where colours (for example) are used to create the illusion of layers which allow the user to focus on just one 'layer' at a time
+  * Use coloured tint to group related content
+  * Use colours to tie together elements across a webpage like the 'buy' button and 'checkout' button
+  * For important categories, "use bright saturated colours to make them pop off the page"
+  * For categories of equal importance, make them the same brightness and size, but vary the colour
+  * Use as few layers as possible and _always squint at your page_ to double check your layers are clear
+* **Colour coding works best when** you have users who will have the time or will reuse your product enough to _learn your code_, or have already learnt it from somewhere else (like the traffic light system)
+* Your users don't always follow the path you set through your product, so walk through it a few times and watch other people doing the same
+  * **Squint at the page** to make sure the right things pop out at you at every stage
+
+<a name="part6"/>
+#Part 6 - Hide
