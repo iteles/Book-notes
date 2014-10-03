@@ -131,3 +131,23 @@ Each of these will be discussed in detail in the following chapters:
 
 <a name="part6"/>
 #Part 6 - Hide
+> You must carefully choose what to hide so as not to inconvenience the user
+* Hide information that is **necessary but used infrequently** such as account details and settings (usually at the edge of an application)
+* Allowing the user to customise everything in the interface is often more laziness on the part of the designer than anything else, only do it if it is very aligned with your product's mission
+  * And automatic customisation is often a _terrible_ idea because users can't learn where things are if they keep changing and it's very frustrating
+* Hide options that are really only for the experts who use your products
+  * Example: the save menu in Word opens with the simpler _mainstream_ options but allows users to un-hide a number of expert options - and then saves the preferences for next time
+* **Staged disclosure** reveals more features as the user gets deeper into the product
+  * Works well where an increase in complexity is expected
+  * _Set the scene_ and always let your users know where they are in your product ("Welcome to the secure checkout")
+  * _Tell a story_ with the flow of your screens - users expect the interaction with your product to unfold like a story, the order of things (in a checkout process where they have to choose from a couple of different options for example) has to make sense to them
+    - User test this!
+  * Each chunk of information you reveal should be _complete and self contained_
+  * Speak the user's language
+* If you hide features, you have to **choose an appropriate label for them**
+  * It's a good idea to choose a label that only appeals to the group of people that is likely to want to use them - on Apple's site for example, everything is super simple and glossy but then there's a section labelled 'Tech Specs' for the experts that want to get into that
+  * Note: Avoid 'advanced'. _"Labelling something as 'Advanced' informs the user she's not qualified to go there"_
+* As a user is concentrating on a task, their _locus of attention narrows_ - make sure your visual cues for the features that are hidden away can be seen by your user on their relevant journey (but don't distract or get in the way)
+
+<a name="part7"/>
+#Part 7 - Displace
