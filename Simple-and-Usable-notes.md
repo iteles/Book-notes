@@ -81,6 +81,7 @@ Each of these will be discussed in detail in the following chapters:
 <a name="part4"/>
 #Part 4 - Remove
 >According to a 2002 study by Standish Group, 64 percent of software features are "never or rarely used"
+
 * This strategy is about **removing distractions** so your users can **focus on your project** or call to action
 * Don't cut features just because they're too difficult to build
 * _Do_ cut features that are poorly implemented - remember that if it's broken, it'll probably get fixed, but if it's just shoddy, it'll probably be around for a _very_ long time
@@ -132,6 +133,7 @@ Each of these will be discussed in detail in the following chapters:
 <a name="part6"/>
 #Part 6 - Hide
 > You must carefully choose what to hide so as not to inconvenience the user
+
 * Hide information that is **necessary but used infrequently** such as account details and settings (usually at the edge of an application)
 * Allowing the user to customise everything in the interface is often more laziness on the part of the designer than anything else, only do it if it is very aligned with your product's mission
   * And automatic customisation is often a _terrible_ idea because users can't learn where things are if they keep changing and it's very frustrating
@@ -151,3 +153,27 @@ Each of these will be discussed in detail in the following chapters:
 
 <a name="part7"/>
 #Part 7 - Displace
+> If you understand the trade-offs, displacing the right roles to the right devices works well
+
+* **Displace between devices** - what's easy on one platform can feel complex on another, so play to the strengths of each platform
+  * e.g. Running apps gather information on a mobile device that you can take with you on your run, but often display the complex analysis of that information in a web browser where there is more viewing space
+* List of mobile vs desktop strengths and weaknesses can be found on p. 164
+* Another things you can displace is the  complexity - rather than displace it to another device you can **displace it to the user**
+  * Keep your interface simple and let the user decide how to use your product, for example in a travel app they can choose to make lists of activities by location, type, family-friendliness, weather conditions and millions of other options; if you try to cater for all of them, it becomes incredibly complex but if you let the user make up their mind about how to use your product it remains simple and is possibly a lot more useful for the user
+  * Allow users to _organise_ information _as they choose_
+  * Allowing users to _set their own goals_ also helps the product _work both for novices and for experts_
+* The key is to understand **which tasks to pass to the computer and which to leave for the user**:
+  * Computers are good for things like accurate calculations, storing and sorting large data sets, following procedures and cross-referencing information
+  * Users are good at setting goals, recognising information and choosing from small lists
+* Design features that can be **used for several purposes**, for example, a basket that could double as a wishlist
+* **Data entry is a sticking point** - don't force your users to stick to rigid data formats when entering data and let them do it in a way that is natural to them
+* In order to displace you have to **trust your users** to actually do the tasks you're displacing to them so _user test_ your product!
+
+<a name="part8"/>
+#Part 8 - Before we go
+> The secret to creating a simpple user experience is to shift the complexity into the right place, so that each moment feels simple
+
+Should a task be automated? Should it have very specific and explicit controls? Should the steps of the task be completed all at once (registering for a service) or over time (customising an interface for your needs)?
+
+* Pay attention to the details - a tiny frustration often becomes a frequent annoyance for your customers so it's worth putting in a day to fix it
+* Simplicity means allowing the user enough space to fill in details from his/her life and make it personal
