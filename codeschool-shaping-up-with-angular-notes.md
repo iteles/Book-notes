@@ -78,3 +78,36 @@ var app = angular.module('store-checkout', []);
 2. Move your controller(s)/directive(s) into your new js file
 3. Add your new module as a dependency in your previous module if that is the case: `var app = angular.module('main-store', ['store-checkout']);`
 4. Don't forget to link the new js file in your HTML document
+
+
+###Services
+Angular has a number of built-in services which allow regularly used functionality to be used with controllers. Examples are `$http` to fetch data from a json file or the server, `$log` and `$filter`
+* All of these services return _promises_
+* A nice feature of `$http` is that if we tell it to fetch a JSON object, it will automatically decode it into Javascript objects and arrays
+* To use a service within our controller, you specify it as a dependency and then _also_ pass it in as an argument for the controller function so that you can use it inside your controller: `app.controller('myController', ['$http', function($http){ ........ }])`
+  * This way of specifying the services our controller needs is called **dependency injection** - it's injecting the services into the controller as arguments
+  * To use more than one service, it might look like `app.controller('myController', ['$http', '$log', function($http, $log){ ........ }])`
+* Moving your data from an array inside your JS file into a json file can be done easily with services; say for example your array of data is an array of products:
+```javascript
+(function(){ //wraps your code in a closure, taking it out of the global namespace
+  var app = angular.module('main-store', [<dependencies>]);
+
+  app.controller('StoreController', ['$http', function($http){
+      //we want to make our controller return the data from our json file
+      //creating a store variable means we can set this controller to return
+      //products, without writing 'this.products' from inside the $http get call
+      //as inside that $http get call, 'this' would actually be referring to the service, http
+      var store = this;
+      //initialises this.products to empty array so that if the call to the json
+      //file takes a little while, there are no errors when the page loads
+      store.products = [ ];
+
+      //this is a shortcut way of writing the $http get request
+      $http.get('/products.json').success(function(data){
+        store.products = data; //allows controller ('this'), to return the data
+      });
+  }]);
+
+}) (); //note the extra set of brackets which runs the closure function
+```
+You can use any `$http` method by using a `config` object with the following format: `$http({method: '<methodname>', url: '<path/to/file>'});`
