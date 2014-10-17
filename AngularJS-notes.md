@@ -20,7 +20,7 @@ The key idea with the MVC application structure is a separation of data (model),
 
 A few bits and pieces:
 * The `ng-app` tag tells Angular how much of the page you want it to manage, so if you use `<html ng-app>`, it means you want Angular to manage the whole page
-  * This si useful if you're integrating Angular with an existing app that uses other methods and languages
+  * This is useful if you're integrating Angular with an existing app that uses other methods and languages
 * Javascript classes called _controllers_ are used to manage areas of the page - these are also the name of the function in your js file, e.g. `<body ng-controller='CartController'>`
 * The `ng-model` tag is used to keep changes in sync as it refreshes data when it is updated
 
@@ -46,8 +46,9 @@ Angular event handlers are different from the standard Javascript handlers in th
   * `$scope.$watch('funding.startingEstimate', computeNeeded); //watch the expression 'funding.startingEstimate and call computeNeeded() when it changes'` - note the expression to watch is in quotes
 * `ng-repeat` allows you to iterate through an array and also gives you a reference to your location within the array through the use of `$index` (also $first, $middle, and $last)
 * You can use `ng-submit` to call a function when a form submits
-  * You would use `ng-submit` on the form element itself and it also keeps the browser from carrying out the default POST action on submit
+  * You would use `ng-submit` on the form element itself and it also _keeps the browser from carrying out the default POST action on submit_
 * Other event-handling directives include `ng-click` (instead of 'onclick') and `ng-dblclick`, etc
+  * Note (from separate source): `ng-click` only works with mouse click so if you want something to happen when a use hits the enter key at the end of a form, try to use `ng-submit` on the form element instead
 ```javascript
 //using ng-click for example within a form would look like this:
 <button ng-click="reset()">Reset</button>
@@ -162,4 +163,10 @@ return titleCaseFilter; });
 ```
 The `pageHeading` would be inserted via a controller in this heading.
 
-###AUGUST update: The more I read about Angular, the less keen I am to wrap my HTML in a bunch of proprietary directives. For the immediate future I will be exploring other JS frameworks and may come back to Angular after that. 
+###AUGUST update: The more I read about Angular, the less keen I am to wrap my HTML in a bunch of proprietary directives. For the immediate future I will be exploring other JS frameworks and may come back to Angular after that.
+
+
+#My Own Lessons Learned
+I added this section to capture a few tips and things I picked up that weren't explicit in the book.
+* When learning, always use a CDN for an **uncompressed** library - the console error messages will be way more helpful than with a minified version
+* `ngRoute` has been taken out of the main angularJS library and now needs to be loaded into your html via a separate `.../1.2.26/angular-route.js` script (at the time of writing 1.2.26 is the latest stable release)
