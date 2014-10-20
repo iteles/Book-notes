@@ -208,10 +208,29 @@ Directives extend the HTML syntax and Angular has many inbuilt examples of these
 
 <a name="chapter3"/>
 #Chapter 3 - Developing in AngularJS
-The aim of this chapter is to provide a **very high level view of how to lay out an app** along with some tool and workflow tips; the details of buiding a sample application will be covered in [Chapter 4](#chapter4)
+The aim of this chapter is to provide a **very high level view of how to lay out an app** along with some tool and workflow tips; the details of building a sample application will be covered in [Chapter 4](#chapter4)
 
+**Suggested folder structure** for an Angular app:
+* **app** - contains all of the code for what is displayed to the user _(note: I've also seen this referred to as 'public')_
+  * **/styles** - contains all CSS files
+  * **/images**
+  * **/scripts** - contains the majority of the Angular code
+    * **/controllers**
+    * **/directives**
+    * **/filters**
+    * **/services**
+  * **/vendor** - contains all the libraries your app depends on, including AngularJS
+* **/config** - contains Karma configurations for testing
+* **/test** contains files for unit and scenario testing
+  * **/spec** - contains files for unit tests, mirrors the structure of the scripts folder in the app directory
+  * **/e2e** - contains the end to end scenario testing files
 
-
+* It's **good practice** to use the _array-style injection_ as per the below as this will avoid bugs later when you start compiling your code
+```javascript
+myAppModule.controller ('MyControllerName',['$scope', 'otherDependencyName', function($scope, otherDependencyName){
+  //code here to do something awesome
+}]);
+```
 
 
 #My Own Lessons Learned
