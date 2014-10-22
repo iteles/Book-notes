@@ -198,6 +198,8 @@ appModule.controller("FriendInfoController", function($scope, Friendlist, $route
 
 ###Directives
 Directives extend the HTML syntax and Angular has many inbuilt examples of these such as `ng-repeat` and `ng-show`. They will be covered in detail in [Chapter 6](#chapter6) but simply put, the overall structure of creating custom directives for when Angular's ones don't do what you need them to is `modulename.directive('directivename', directivefunction(){...});`
+> At a high level, directives are markers on a DOM element (such as an attribute, element name, comment or CSS class) that tell AngularJS's HTML compiler ($compile) to attach a specified behavior to that DOM element or even transform the DOM element and its children. - From [Angular documentation](https://docs.angularjs.org/guide/directive)
+
 
 ###Forms
 * Angular has some built-in form extensions such as `ng-maxlength` and `ng-minlength` for form input fields
@@ -231,12 +233,23 @@ myAppModule.controller ('MyControllerName',['$scope', 'otherDependencyName', fun
   //code here to do something awesome
 }]);
 ```
+<a name="chapter4"/>
+#Chapter 4 - Analyzing an AngularJS app
+**Directives**
+Directives go through a 2-step process:
+  1. **Compile phase** - directives are found and any DOM manipulation is processed. At the end of this phase, a linking function is produced (as `compile` functions return links)
+  2. **Linking phase** - the DOM template is linked to the scope and any watchers or listeners are added. This is done through the `link` functions in directives, using the format `link: function(scope, element, attrs){}`
+
+All directives hook into the Angular dependecy injection system so we inject whatever you need using the standard `.directive('<directiveName', ['<dependencyName', function(...){ ... }]);` format
+
+
+
 
 
 #My Own Lessons Learned
 I added this section to capture a few tips and things I picked up that weren't explicit in the book.
 * When learning, always use a CDN for an **uncompressed** library - the console error messages will be way more helpful than with a minified version
-<a name="routes"/>**Changing view with Routes**
+<a name="routes"/>####Changing view with Routes
 * `ngRoute` has been taken out of the main angularJS library and now needs to be loaded into your html via a separate `.../1.2.26/angular-route.js` script (at the time of writing 1.2.26 is the latest stable release)
 Full list of steps:
 1. You should have an index.html file (or similar) which includes all the code that will be repeated in every page of your app (e.g. Header with navigation menu) and then a div (or similar) which will contain the various views; these views are essentially snippets of HTML that fill out the body of your app
@@ -246,3 +259,16 @@ Full list of steps:
 5. Create your `someModule.config(function($routeProvider){})` configuration block, calling `$routeProvider` as a service
 6. Angular by default adds hashes (#) to your URL, e.g. .../#/about.html - to stop this from happening, add `$locationProvider.html5Mode(true);` to your configuration block (_NOTE: this implies adding $locationProvider as a dependency in the block as well like so: `appModule.config([ '$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){}`_) and `<base href="/">` to the <head> of your index.html file
 7. Due to browser security restrictions, when trying the code out yourself, it won't run as just file:// in the browser, you'll need to run a simple server - I found the easiest way to do this was installing node static with `npm install -g node static` and then running it by calling `static` from the terminal whilst inside the same directory as my app
+
+<a name="customdirectives"/>####Building custom directives
+* Sitepoint has a good [practical guide to Angular directives](http://www.sitepoint.com/practical-guide-angularjs-directives/) written in early 2014
+* By default a directive doesn't get its own scope, **it inherits the parent scope** - so if used inside a controller it will use the controller's scope
+* Directives that update the DOM typically use **the `link` option** with the following signature `link: function(scope, element, attrs) { ... }`
+  * Using the `link` function allows you to utilise the scope
+  * the `link` function is usually used for attaching listeners to the DOM elements, watching the properties for changes and updating the DOM
+* Occasionally you might use the `compile` function instead of the `link` function in a directive
+  * This is relatively rare, but the difference is well explained in the [practical guide to Angular directives](http://www.sitepoint.com/practical-guide-angularjs-directives/) mentioned above
+  * Compile functions _return_ link functions
+  * Angular will traverse the document running all of the `compile` functions first (it also collects the link functions that these return and adds them to the list of link functions) and _only then_ does it go through again and run the `link` functions
+  * `compile` functions have no scope and a good example of this is `ngRepeat`
+> Listeners registered to scopes and elements are automatically cleaned up when they are destroyed, but if you registered a listener on a service, or registered a listener on a DOM node that isn't being deleted, you'll have to clean it up yourself or you risk introducing a memory leak.[...] You can use element.on('$destroy', ...) or scope.$on('$destroy', ...) to run a clean-up function when the directive is removed. - From [AngularJS documentation on directives](https://docs.angularjs.org/guide/directive)
