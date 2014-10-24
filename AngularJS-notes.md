@@ -52,7 +52,7 @@ Angular event handlers are different from the standard Javascript handlers in th
   * You call `$watch()` first with the expression to observe and then the callback which is called when the expression changes
   * `$scope.$watch('funding.startingEstimate', computeNeeded); //watch the expression 'funding.startingEstimate and call computeNeeded() when it changes'` - note the expression to watch is in quotes
 * `ng-repeat` allows you to iterate through an array and also gives you a reference to your location within the array through the use of `$index` (also $first, $middle, and $last)
-* You can use `ng-submit` to call a function when a form submits
+* You can use `ng-submit` to call a function when a form submits, e.g. `ng-submit=save()` (where you have defined your $scope.save function in the controllers)
   * You would use `ng-submit` on the form element itself and it also _keeps the browser from carrying out the default POST action on submit_
 * Other event-handling directives include `ng-click` (instead of 'onclick') and `ng-dblclick`, etc
   * Note (from separate source): `ng-click` only works with mouse click so if you want something to happen when a use hits the enter key at the end of a form, try to use `ng-submit` on the form element instead
@@ -67,6 +67,7 @@ $scope.reset = function() {
 ```
 * `ng-show` and `ng-hide` function by setting the CSS element styles to `display:block` and `display:none`
 * `ng-class` can be used to conditionally create a class name (for example, when a button is cliked) which then changes the styling of that element via CSS
+  * A good example of this given later in the book is when a product is denoted as featured (where product.featured is a boolean that is equal to true for example), then a class 'featured' is added with `ng-class` that gives it special styling
 ```javascript
 <table ng-controller='RestaurantTableController'>
   //where ng-class add the class 'selected' to <tr> element based on the result of $index==selectedRow
@@ -185,9 +186,7 @@ appModule.config([ '$routeProvider', function($routeProvider) {
       controller: 'FriendInfoController',
       templateUrl: 'view-profile.html'
     })
-    .otherwise({
-      templateUrl: "404.html"
-    });
+    .otherwise({redirectTo:'/'});
 }]);
 
 appModule.controller("FriendInfoController", function($scope, Friendlist, $routeParams) {
@@ -204,6 +203,16 @@ Directives extend the HTML syntax and Angular has many inbuilt examples of these
 ###Forms
 * Angular has some built-in form extensions such as `ng-maxlength` and `ng-minlength` for form input fields
 * Using HTML5 attributes such as adding the attribute `required` to an input field is totally supported and will simply be replaced by Angular with directives
+* There is also an `$error` object that can be used in conjunction with these, for example:
+```html
+<form name="myForm">
+  User name: <input type="text"
+                    name="userName"
+                    ng-model="user.name"
+                    ng-minlength="3">
+  <span class="error" ng-show="myForm.userName.$error.minlength">Too Short!</span>
+</form>
+```
 * Angular already has some built-in validation whenever the `<form>` tag is used
   * Angular will set a `$valid` property to _true_ when the input is valid - this property can be accessed through a controller once it has been added to the `<form>` element
   * Or, for example, we can prevent the form from being submitted if it's not valid by using `<button ngDisabled=!addUserForm.$valid>Submit</button>` where 'addUserForm' is the form _name_
@@ -235,12 +244,58 @@ myAppModule.controller ('MyControllerName',['$scope', 'otherDependencyName', fun
 ```
 <a name="chapter4"/>
 #Chapter 4 - Analyzing an AngularJS app
-**Directives**
+####Directives
 Directives go through a 2-step process:
   1. **Compile phase** - directives are found and any DOM manipulation is processed. At the end of this phase, a linking function is produced (as `compile` functions return links)
   2. **Linking phase** - the DOM template is linked to the scope and any watchers or listeners are added. This is done through the `link` functions in directives, using the format `link: function(scope, element, attrs){}`
 
 All directives hook into the Angular dependecy injection system so we inject whatever you need using the standard `.directive('<directiveName', ['<dependencyName', function(...){ ... }]);` format
+
+####Setting up the routes
+The `resolve` object used in the $routeProvider (within app.config) as per the below, tells Angular that what is within the curly brackets {} needs to be resolved before the route can be displayed to the user. If the service returns a promise, Angular knows to wait until the promise is resolved (i.e. until the server has responded) before it displays the route.
+```javascript
+  $routeProvider
+    .when('/', {
+      controller: 'ListCtrl',
+      //MultiRecipeLoader is a service we have defined separately to
+      //deliver multiple recipes (returns a promise)
+      resolve: {
+        recipes: function(MultiRecipeLoader){
+          return MultiRecipeLoader();
+        }
+      }, //end of resolve
+      templateUrl: '/views/list.html'
+    })
+    .otherwise({redirectTo:'/'});
+```
+`.otherwise()` in this case redirects to the homepage but it could just as easily route to a '404.html' template for a 404 not found page.
+
+####Views
+* `ng-app` name should be the same as your main angular.module name so Angular knows to hook them together (in the book, this is the controller.js file which contains app.config with the routing as well as all of the controllers)
+* `ng-view`: the div which is given this directive is where Angular drops in the templates which we have defined in our routes
+* All links in _index.html_ (the main template which the smaller templates will then hook into) should have a hash `/#/` to **ensure the page doesn't reload** - Angular only watches the links if there is no reloading - for example:
+```html
+<div id="focus">
+  <!--Notice the has in the href element-->
+  <a href="/#/new">New Recipe</a>
+</div>
+<div>
+  <a href="/#/">Recipe List</a>
+</div>
+</div>
+<div class="span10">
+  <!--THIS IS WHERE THE VIEWS WILL BE LOADED -->
+  <div ng-view></div>
+</div>
+```
+**Most apps have some for of `MainController` associated with the template in index.html, usually on the `<body>` tag** - in the case of the book, this wasn't required as there is no need for Angular content that needs to refer to scope.
+
+* _If a route defines a controller and a particular template_, there is _no need to add the `ng-controller` directive into that template itself_ as Angular will know through the routing that any variables are within the scope of the controller associated to it
+
+
+
+
+
 
 
 
