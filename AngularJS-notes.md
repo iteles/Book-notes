@@ -1,9 +1,9 @@
 Examples of code in these notes are, as a general rule, copied from the book directly as these proved very apt at explaining the surrounding wording.
 
 #Table of Contents
-* [](#chapter1)
-* [](#chapter2)
-* [#Chapter 3 - Developing in AngularJS](#chapter3)
+* [Chapter 1 - Introduction to AngularJS](#chapter1)
+* [Chapter 2 - ](#chapter2)
+* [Chapter 3 - Developing in AngularJS](#chapter3)
 
 <a name="chapter1"/>
 #Chapter 1 - Introduction to AngularJS
@@ -36,7 +36,7 @@ The key idea with the MVC application structure is a separation of data (model),
 To invoke Angular you just need to **load the Angular.js library** and **tell Angular which part of the DOM is should manage using the ng-app tag**.
 
 The script can be loaded using Google's [CDN](http://en.wikipedia.org/wiki/Content_delivery_network):
-```javascript
+```html
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js">
 </script>
 ```
@@ -304,7 +304,8 @@ The `resolve` object used in the $routeProvider (within app.config) as per the b
 #My Own Lessons Learned
 I added this section to capture a few tips and things I picked up that weren't explicit in the book.
 * When learning, always use a CDN for an **uncompressed** library - the console error messages will be way more helpful than with a minified version
-<a name="routes"/>####Changing view with Routes
+<a name="routes"/>
+###Changing view with Routes
 * `ngRoute` has been taken out of the main angularJS library and now needs to be loaded into your html via a separate `.../1.2.26/angular-route.js` script (at the time of writing 1.2.26 is the latest stable release)
 Full list of steps:
 1. You should have an index.html file (or similar) which includes all the code that will be repeated in every page of your app (e.g. Header with navigation menu) and then a div (or similar) which will contain the various views; these views are essentially snippets of HTML that fill out the body of your app
@@ -315,7 +316,8 @@ Full list of steps:
 6. Angular by default adds hashes (#) to your URL, e.g. .../#/about.html - to stop this from happening, add `$locationProvider.html5Mode(true);` to your configuration block (_NOTE: this implies adding $locationProvider as a dependency in the block as well like so: `appModule.config([ '$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){}`_) and `<base href="/">` to the <head> of your index.html file
 7. Due to browser security restrictions, when trying the code out yourself, it won't run as just file:// in the browser, you'll need to run a simple server - I found the easiest way to do this was installing node static with `npm install -g node static` and then running it by calling `static` from the terminal whilst inside the same directory as my app
 
-<a name="customdirectives"/>####Building custom directives
+<a name="customdirectives"/>
+###Building custom directives
 * Sitepoint has a good [practical guide to Angular directives](http://www.sitepoint.com/practical-guide-angularjs-directives/) written in early 2014
 * By default a directive doesn't get its own scope, **it inherits the parent scope** - so if used inside a controller it will use the controller's scope
 * Directives that update the DOM typically use **the `link` option** with the following signature `link: function(scope, element, attrs) { ... }`
