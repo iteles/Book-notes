@@ -115,6 +115,34 @@ Template.posts.helpers({
     }
 });
 ```
+**Routing**
+_Routing_ looks at what the URL is that you're requesting and changes the content displayed in the browser. In Meteor **routing is done with [Iron Router](https://github.com/EventedMind/iron-router)** - `meteor add iron:router` to install.
+
+You'll want to alter your HTML page so that:
+* `main.html` contains only the <head> of your document, body is moved out to your layout template
+* `layout.html` is a new template (suggest this is kept in **client/templates/application**) which is essentially the `<body>` of your page
+  * It contains any standard content that is to be displayed on every page (a navigation bar for example)
+  * Don't forget to replace the `<body>` tags with `<template name="layout">`
+* The portion of the content inside `layout.html` that should be replaced by a template based on the routing should be denoted by `{{> yield}}`
+  * `yield` is a _special template helper_ in Iron Router and acts as a placeholder for content
+  * More (and quite interesting) [info on `yield` can be found in the Iron Router guide](https://github.com/EventedMind/iron-router/blob/devel/Guide.md#layouts)
+
+Your `router.js` file will **contain your routes** - it is recommended this is kept in the **lib** directory so it's loaded first
+```javascript
+//Example lib/router.js file
+Router.configure(
+  //defines a default layout template for all routes using the global (configure) router option
+  { layoutTemplate: 'layout'  }
+);
+
+//when the home directory is requested, the postsList template is displayed
+Router.route('/',
+  { name: 'postsList' }
+);
+```
+Meteor will automatically look for a template with the same name as the route ('postsList' in the example above).  
+_Aside:_ Because we have named our route in the routing above, we can also use the `{{pathfor}}` spacebars helper which keep us from having to hard-code links into our HTML: `<a class="navbar-brand" href="{{pathFor 'postsList'}}">Microscope</a>`
+
 
 
 
