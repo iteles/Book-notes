@@ -83,7 +83,7 @@ Template.postsList.helpers({
 * Using `fetch()` transforms it into an array of the actual objects though, e.g. `Posts.find().fetch()`
 > The server-side collection pulled the posts from Mongo, passed them over the wire to our client-side collection, and our Spacebars helper passed them into the template.
 
-**Publishing & Subscribing**
+###Publishing & Subscribing
 Using `find()` assumes that the whole server-side db will be on the client. **This is possible because up until now we've had the `autopublish` package switched on, which mirrors your server-side database to all your clients - this _should not be on_ for production apps as it's a security risk.** Using _publish & subscribe_ allows you to filter the data shared with clients** - it takes a subset of your database and shares it to the client.
 * To remove autopublish type `meteor remove autopublish` in your terminal
 * Now we need to choose what to share from the server with the client:
@@ -93,7 +93,7 @@ Using `find()` assumes that the whole server-side db will be on the client. **Th
     return //whatever we want to share with the client goes here
   });
   ```
-  * We **subscribe to the publications on the client** in the _client/main.js_:
+  * We **subscribe to the publications on the client** - best practice is actually _subscribe using a [`waitOn`](#waiton)_ in the _router.js_ file:
   ```javascript
   Meteor.subscribe('posts', 'optionalParametersToPassIn');
   ```
@@ -115,7 +115,7 @@ Template.posts.helpers({
     }
 });
 ```
-**Routing**
+###Routing
 _Routing_ looks at what the URL is that you're requesting and changes the content displayed in the browser. In Meteor **routing is done with [Iron Router](https://github.com/EventedMind/iron-router)** - `meteor add iron:router` to install.
 
 You'll want to alter your HTML page so that:
@@ -143,8 +143,32 @@ Router.route('/',
 Meteor will automatically look for a template with the same name as the route ('postsList' in the example above).  
 _Aside:_ Because we have named our route in the routing above, we can also use the `{{pathfor}}` spacebars helper which keep us from having to hard-code links into our HTML: `<a class="navbar-brand" href="{{pathFor 'postsList'}}">Microscope</a>`
 
+<a name="waitOn">
+**Using `waitOn` to avoid blank loading time**
+* The `waitOn` function used in the router allows you to wait until the function is 'ready' deliver the data to the browser
+  * In the meantime, Iron Router supports the use of a `loadingTemplate` which it will display whilst the data is being loaded
+```javascript
+//these two lines would be added to your Router settings
+//if added to Router.configure, this happens once at the first loading of the app
+loadingTemplate: 'loading',
+waitOn: function() {
+  return Meteor.subscribe('posts');
+}
+```
 
-
+**Routing to specific items**
+This is for example when an ID is entered after the root in the URL and only the posts with that particular ID is shown:
+```javascript
+Router.route('/posts/:_id',
+//the '_id' here goes into the router's params array
+  //postPage template will be called within the data context of the post we have asked for via the ID
+  {name: 'postPage',
+    //this data context passes the id in the current URL (this.params._id) to the findOne function
+    data: function(){ return Posts.findOne(this.params._id);}
+   }
+);
+```
+Note the **data context** in the code above.
 
 
 
