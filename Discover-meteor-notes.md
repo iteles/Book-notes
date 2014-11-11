@@ -119,12 +119,14 @@ Template.posts.helpers({
 _Routing_ looks at what the URL is that you're requesting and changes the content displayed in the browser. In Meteor **routing is done with [Iron Router](https://github.com/EventedMind/iron-router)** - `meteor add iron:router` to install.
 
 You'll want to alter your HTML page so that:
-* `main.html` contains only the <head> of your document, body is moved out to your layout template
+* `main.html` contains only the `<head>` of your document, body is moved out to your layout template
 * `layout.html` is a new template (suggest this is kept in **client/templates/application**) which is essentially the `<body>` of your page
   * It contains any standard content that is to be displayed on every page (a navigation bar for example)
   * Don't forget to replace the `<body>` tags with `<template name="layout">`
+  * You don't actually need to add any reference to the layout template in your _main.html_ file, you'll determine this in your routes
 * The portion of the content inside `layout.html` that should be replaced by a template based on the routing should be denoted by `{{> yield}}`
   * `yield` is a _special template helper_ in Iron Router and acts as a placeholder for content
+    * Your routes will then determine which templates you choose to appear in that `{{> yield}}` placeholder depending on the URL
   * More (and quite interesting) [info on `yield` can be found in the Iron Router guide](https://github.com/EventedMind/iron-router/blob/devel/Guide.md#layouts)
 
 Your `router.js` file will **contain your routes** - it is recommended this is kept in the **lib** directory so it's loaded first
@@ -135,7 +137,8 @@ Router.configure(
   { layoutTemplate: 'layout'  }
 );
 
-//when the home directory is requested, the postsList template is displayed
+//because a layout template is defined in the router configuration above,
+  //this will load the postsList template *within* the layout template, where we currently see {{> yield}}
 Router.route('/',
   { name: 'postsList' }
 );
@@ -147,9 +150,11 @@ _Aside:_ Because we have named our route in the routing above, we can also use t
 **Using `waitOn` to avoid blank loading time**
 * The `waitOn` function used in the router allows you to wait until the function is 'ready' deliver the data to the browser
   * In the meantime, Iron Router supports the use of a `loadingTemplate` which it will display whilst the data is being loaded
+    * `meteor add sacha:spin` allows you to then use `{{> spinner}}` within a template named 'loading' to create a spinner
 ```javascript
 //these two lines would be added to your Router settings
-//if added to Router.configure, this happens once at the first loading of the app
+//if added to Router.configure, the data is only loaded once - when your app loads -
+//and doesn't need to be loaded again
 loadingTemplate: 'loading',
 waitOn: function() {
   return Meteor.subscribe('posts');
