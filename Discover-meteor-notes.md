@@ -181,4 +181,35 @@ Note the **data context** in the code above.
 Posts = new Mongo.collection('posts');
 ```
 * You can get your app's log by typing `meteor logs myappname` into the terminal
-ZZZ * client/main.html:1: Can't set DOCTYPE here.  (Meteor sets <!DOCTYPE html> for you)
+* client/main.html:1: Can't set DOCTYPE here.  (Meteor sets <!DOCTYPE html> for you)
+* Your images go into the _/public_ folder and meteor is intelligent enough to just recognise that they're there
+
+Steps for moving from fixed data to the database:  
+1. Originally you may have a var containing data within your js file with a template helpers to return it:
+```javascript
+var friendsData = [
+  { ...data...},
+  { ...data...}
+]
+//in your html you will pull in this data referring to {{friendlist}}
+Template.templateName.helpers({
+  friendlist: friendsData
+});
+```
+2. Now to transition: set up the Mongo db with a _collection.js_ file in _lib/collections_: `Friends = new Mongo.Collection('friends');`  
+3. Remove your _friendsData_ variable from your code altogether and alter your template helper to refer to your new collection:
+```javascript
+Template.templateName.helpers({
+  friendlist: function(){
+    return Friends.find();
+  }
+});
+```
+4. Now your app is still publishing your whole database to the client by default so run `meteor remove autopublish` in your terminal  
+5. Publish whatever you want to publish with a `publications.js` file in the _server_ folder
+```javascript
+  Meteor.publish('friends', function(){
+    return Friends.find(); //in this case publishing the whole data set
+  });
+```
+6. Subscribe to your data on the front end, either in your routes or in _main.js_
