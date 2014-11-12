@@ -2,6 +2,7 @@ Ahead of a [Meteor London](http://www.meteorlondon.com) workshop, I decided to m
 Below are some notes I made throughout, with some of my own notes sprinkled in (from research carried out where I wanted further clarification on a point).
 All examples are taken from this excellent book, unless otherwise stated.
 
+
 ###Setup
 * `meteor add mizzao:bootstrap-3` adds the Bootstrap framework
   * This could be added as usual by including its files in our project but this way the package keeps it up to date
@@ -66,6 +67,7 @@ Posts = new Mongo.collection('posts');
 
 * **MiniMongo** is Meteor's client-side implementation of Mongo
 * You don't send your _whole_ database to the client so a **client-side collection** consists of a subset of your database **stored in browser memory**, allowing _almost instant_ access
+  * A good example of this is that for example with users, there's a lot of data on the db like login tokens and other fields, but the default is that in the local (client-side) collection, you only see a _secure subset_ of this data (the id and the username for example)
 * Meteor synchronises the client and server-side data through the _collection name_ ('posts' in the example above)
 * To test this is all working, you can insert items from the _brower console_, so in the example of our 'posts' collection, this might be `db.posts.insert({ title: 'Introducing Telescope', url: 'http://sachagreif.com/introducing-telescope/'});`
 
@@ -146,7 +148,7 @@ Router.route('/',
 Meteor will automatically look for a template with the same name as the route ('postsList' in the example above).  
 _Aside:_ Because we have named our route in the routing above, we can also use the `{{pathfor}}` spacebars helper which keep us from having to hard-code links into our HTML: `<a class="navbar-brand" href="{{pathFor 'postsList'}}">Microscope</a>`
 
-<a name="waitOn">
+<a name="waitOn"/ >
 **Using `waitOn` to avoid blank loading time**
 * The `waitOn` function used in the router allows you to wait until the function is 'ready' deliver the data to the browser
   * In the meantime, Iron Router supports the use of a `loadingTemplate` which it will display whilst the data is being loaded
@@ -175,10 +177,48 @@ Router.route('/posts/:_id',
 ```
 Note the **data context** in the code above.
 
+###Session (sidebar chapter)
+* The `Session` object is a _reactive_ data store which is **global** - there's only one and it's accessible from everywhere
+  * Session is **not shared between users** _or_ between browser tabs
+* Usage: `Session.set('pageTitle', 'New page title')` or for example to get a value: `pageTitle: function(){Session.get('pageTitle')}`
+* Although the session is lost between users, browsers or if the page is _manually_ refreshed, **Session is not lost by Meteor's Hot Code Reload** - i.e. when the underlying code files are changed and saved, Meteor refreshes the server _without losing the Session_
+  * This is important because it means you can actually change the _running source code_ of a client's application without disrupting their activities
+
+>Importante lessons:
+1. Always store user state in the Session or the URL so that users are minimally disrupted when a hot code reload happens.  
+2. Store any state you want to be shareable between users _in the URL itself_.  
+
+**Autorun** - [Link to Meteor docs](https://docs.meteor.com/#/basic/tracker)
+There are still a lot of things in Meteor that are standard JS and not reactive (i.e. They have to be told that something has changed in order for them to change, they don't keep watch and do it themselves). However, if you wrap them in `autorun`, it knows that it has to run the code inside the `autorun` block whenever there is a change to a dependency. For example:
+```javascript
+//when the Session changes, autorun will know to run this piece of non-reactive
+//JS alert code again ('Tracker' appears to be part of the autorun code)
+Tracker.autorun(function(){
+  alert('Value is: ' + Session.get('pageTitle'));
+});
+```
+
+###Adding Users
+[Meteor Docs on Accounts](http://docs.meteor.com/#/full/session_equals)
+`meteor add accounts-ui` and `meteor add accounts-password` in the terminal - you can now create the login buttons using `{{> loginButtons align="right"}}` (you can omit or alter the align attribute)
+* This creates a `Meteor.users` collection which you can access
+* The accounts package **autopublishes the data for the _current logged in user_**
+  * _Aside:_ remember the db will contain extra info on the users which it doesn't autopublish to your local collection (which only has id and username) - this can be altered
+* _Aside:_ You can use [`Accounts.ui.config`](http://docs.meteor.com/#/full/accounts_ui_config) to configure options such as 'sign in with username' (as opposed to email) - you would put this inside _client/helpers/config.js_
 
 
 
 
+
+
+
+###On Meteor
+Meteor is a _full stack_ framework, meaning it deals with both client and server side.
+One of its core features is its **reactivity** which means Meteor is able to automatically change what the user sees when any underlying dependencies (such as the collection of data) are changed, without you having to manually tell it to do so.  
+* If you were to do this manually, you might have to use a `observe()` call to watch when something was added, changed or removed and then explicitly update the DOM inside callback functions (p.106), but Meteor lets you **declare** relationships (e.g. pulling in `{{posts}}` in your HTML and having a template helper that links the collection to it) and then it makes sure that it keeps the posts updated whenever the collection changes  what it's actually doing is writing all the underlying `observe()` calls for you in the background
+* You might need to use `observe()` explicitly when you're linking with 3rd party API, the example given is that of a map API where you would need `observe()` to call the map API's own methods (like `removePin()`) when a change happens
+> A **computation** is a block of code that runs every time one of the reactive data sources it depends on changes  
+- You can write your own computations (p.108)
 
 ###Further Notes
 * In Meteor, the `var` keyword limits the scope of the variable to the current file so you wouldn't use it for collections you want to be available for your whole app, e.g.
