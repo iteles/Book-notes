@@ -177,6 +177,18 @@ Router.route('/posts/:_id',
 ```
 Note the **data context** in the code above.
 
+**Route hooks**
+_Route hooks_ intercept the routing (often to do something like check the user is logged in) and potentially change the action of the route based on the result of that interception. The example below checks that the user is logged in (simplistically) before allowing them to access the page where they can submit a post:
+```javascript
+var requireLogin = function() {
+  if (! Meteor.user()) { this.render('accessDenied'); }
+  else { this.next(); }
+}
+
+Router.onBeforeAction(requireLogin, {only: 'postSubmit'});
+```
+**Routes are also reactive** so it will keep tabs on the user's logged in status (in this case) and change the template accordingly.
+
 ###Session (sidebar chapter)
 * The `Session` object is a _reactive_ data store which is **global** - there's only one and it's accessible from everywhere
   * Session is **not shared between users** _or_ between browser tabs
@@ -206,9 +218,46 @@ Tracker.autorun(function(){
   * _Aside:_ remember the db will contain extra info on the users which it doesn't autopublish to your local collection (which only has id and username) - this can be altered
 * _Aside:_ You can use [`Accounts.ui.config`](http://docs.meteor.com/#/full/accounts_ui_config) to configure options such as 'sign in with username' (as opposed to email) - you would put this inside _client/helpers/config.js_
 
+###Basic permissions
+Meteor's _insecure_ package allows client-side actions such as inserts and updates - naturally this cannot exist in production so the package should be removed with `meteor remove insecure` and the permissions should be managed in your collections files using `allow()` and `deny()` in the format:
+```javascript
+Posts = new Mongo.Collection('posts');
+//example, can also be used with update and delete
+Posts.allow({
+  //can also have update or delete
+  insert: function(userId, doc) {
+    // only allow posting if you are logged in
+    return !! userId; }
+  });
+```
+Note that because these are client-side, Meteor methods - which are server-side - will bypass them anyway.
 
 
+###Meteor Methods
+You want to **always keep your event handlers simple - for anything beyond the basics, use a _Method_**
+> A Meteor Method is a server-side function that is _called_ client-side. We aren’t totally unfamiliar with them – in fact, behind the scenes, the `Collection`’s `insert` , `update` and `remove` functions are all Methods.
 
+**Writing a method**
+```javascript
+Meteor.methods({
+  methodName: function(argumentNames){
+    //function code here
+    return //whatever it is you need the method to return, eg. {_id: postID}
+  }
+});
+```
+
+**Calling a method**
+```javascript
+//arguments to be passed in are optional, as defined when you write the method
+Meteor.call('methodName', argumentNames , function(error, result) { // display the error to the user and abort
+  if (error)
+    return alert(error.reason);
+
+  //result is what the method returns, in this case we're returning the _id of the result
+  Router.go('templateName', {_id: result._id});
+    });
+```
 
 
 
