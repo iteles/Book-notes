@@ -231,6 +231,9 @@ Posts.allow({
   });
 ```
 Note that because these are client-side, Meteor methods - which are server-side - will bypass them anyway.
+* `deny()` callbacks will be dealt with first, followed by `allow()` callbacks
+  * None of the `deny()` callbacks can be true for the action to be executed
+  * At least one of the `allow()` callbacks must be true for the action to be executed
 
 
 ###Meteor Methods
@@ -258,6 +261,8 @@ Meteor.call('methodName', argumentNames , function(error, result) { // display t
   Router.go('templateName', {_id: result._id});
     });
 ```
+* Methods should be used whenever there are quite complex operations to be undertaken or where there are things that shouldn't be controlled by the user (like setting the timestamp on a new post) - [more info on when to use methods here](https://www.discovermeteor.com/blog/meteor-methods-client-side-operations/)
+* Remember that if you write a method that can be called from the client, it bypasses any `allow()` or `deny()` callbacks you set up so you'll probably want to run those checks within your method too
 
 
 
