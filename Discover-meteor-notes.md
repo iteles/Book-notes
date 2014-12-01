@@ -264,6 +264,11 @@ Meteor.call('methodName', argumentNames , function(error, result) { // display t
 * Methods should be used whenever there are quite complex operations to be undertaken or where there are things that shouldn't be controlled by the user (like setting the timestamp on a new post) - [more info on when to use methods here](https://www.discovermeteor.com/blog/meteor-methods-client-side-operations/)
 * Remember that if you write a method that can be called from the client, it bypasses any `allow()` or `deny()` callbacks you set up so you'll probably want to run those checks within your method too
 
+###Local collections
+Local collection **only exist in the browser**, never on the server and are useful for data that does not need to be persisted - a good example of this provided in the book is error messages (only relevant to the current session)
+* They should therefore be created within the _client_ folder
+* They are **_'local'_ to the current user**
+
 
 
 ###On Meteor
