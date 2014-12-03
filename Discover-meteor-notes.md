@@ -268,7 +268,7 @@ Meteor.call('methodName', argumentNames , function(error, result) { // display t
 Local collection **only exist in the browser**, never on the server and are useful for data that does not need to be persisted - a good example of this provided in the book is error messages (only relevant to the current session)
 * They should therefore be created within the _client_ folder
 * They are **_'local'_ to the current user**
-
+  
 
 
 ###On Meteor
