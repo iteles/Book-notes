@@ -117,6 +117,9 @@ Template.posts.helpers({
     }
 });
 ```
+You can also **pass parameters into the subscription** such as:
+`Meteor.subscribe('comments')`
+
 ###Routing
 _Routing_ looks at what the URL is that you're requesting and changes the content displayed in the browser. In Meteor **routing is done with [Iron Router](https://github.com/EventedMind/iron-router)** - `meteor add iron:router` to install.
 
@@ -158,10 +161,11 @@ _Aside:_ Because we have named our route in the routing above, we can also use t
 //if added to Router.configure, the data is only loaded once - when your app loads -
 //and doesn't need to be loaded again
 loadingTemplate: 'loading',
-waitOn: function() {
-  return Meteor.subscribe('posts');
+waitOn: function(){
+  return [Meteor.subscribe('posts'), Meteor.subscribe('comments')];
 }
 ```
+For a lot of your data, it might not make sense to subscribe to all the data in your Router.configure() block, especially when there's a lot of data up front. You might want to only subscribe to subsets of the data at specific times, in which case you might want to move the subscription into one of the `Router.route()` blocks - note that if you do this, the data will be loaded _every time your hit that route_.
 
 **Routing to specific items**
 This is for example when an ID is entered after the root in the URL and only the posts with that particular ID is shown:
@@ -175,7 +179,7 @@ Router.route('/posts/:_id',
    }
 );
 ```
-Note the **data context** in the code above.
+Note the **data context** in the code above. As the route sets the data context to be a _specific_ post, whenever you use `this` in the Template helpers that go with the `postPage` template, you will be referring to the data pertaining to the _specific_ post identified by the ID in the URL.
 
 **Route hooks**
 _Route hooks_ intercept the routing (often to do something like check the user is logged in) and potentially change the action of the route based on the result of that interception. The example below checks that the user is logged in (simplistically) before allowing them to access the page where they can submit a post:
@@ -268,7 +272,7 @@ Meteor.call('methodName', argumentNames , function(error, result) { // display t
 Local collection **only exist in the browser**, never on the server and are useful for data that does not need to be persisted - a good example of this provided in the book is error messages (only relevant to the current session)
 * They should therefore be created within the _client_ folder
 * They are **_'local'_ to the current user**
-  
+
 
 
 ###On Meteor
