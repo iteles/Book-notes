@@ -118,7 +118,7 @@ Template.posts.helpers({
 });
 ```
 You can also **pass parameters into the subscription** such as:
-`Meteor.subscribe('comments')`
+`Meteor.subscribe('comments', this.params._id)`
 
 ###Routing
 _Routing_ looks at what the URL is that you're requesting and changes the content displayed in the browser. In Meteor **routing is done with [Iron Router](https://github.com/EventedMind/iron-router)** - `meteor add iron:router` to install.
