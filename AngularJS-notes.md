@@ -2,8 +2,10 @@ Examples of code in these notes are, as a general rule, copied from the book dir
 
 #Table of Contents
 * [Chapter 1 - Introduction to AngularJS](#chapter1)
-* [Chapter 2 - ](#chapter2)
+* [Chapter 2 - Anatomy of an Angular Application](#chapter2)
 * [Chapter 3 - Developing in AngularJS](#chapter3)
+* [Chapter 4 - Analyzing an AngularJS app](#chapter4)
+* [My Own Lessons Learnt](#lessonslearnt)
 
 <a name="chapter1"/>
 #Chapter 1 - Introduction to AngularJS
@@ -300,7 +302,7 @@ The `resolve` object used in the $routeProvider (within app.config) as per the b
 
 
 
-
+<a name="lessonslearnt"/>
 #My Own Lessons Learned
 I added this section to capture a few tips and things I picked up that weren't explicit in the book.
 * When learning, always use a CDN for an **uncompressed** library - the console error messages will be way more helpful than with a minified version
