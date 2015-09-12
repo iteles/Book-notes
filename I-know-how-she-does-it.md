@@ -100,8 +100,30 @@ _Note: Some of these are very applicable to home life in general - I didn't read
 
 <a name="Ch6"/>
 ## Chapter 6 - Make Life Easier
-+ Opens with really refreshing take on time (not one of someone haggard from never having time to do anything) from Lynda Bascelli, who's the busy medical director for a center for the homeless with 2 kids
-  + 
++ Opens with really refreshing take on time (not one of someone haggard from never having time to do anything) from Lynda Bascelli, who's the busy medical director for a center for the homeless with 2 kids - it's **all about attitude**:
+
+> Finally, "we let go of a lot of stuff". Her seven year old goes to school in "whatever she chooses to put on". [...]   
+It also stems from her work. **The patients she sees have problems that make freaking out over household logistics seem stupid.**
+
++ The average woman in the study spent around _10 hours a week on housework_, but it ranged from 2 hours to over 25 hours, taking up entire days!
++ **Recognize that much of what fills our time is a choice**
+
+> If you make a habit of doing laundry daily, you'll end up doing laundry daily whether it really needs to be done or not. [...]    
+And so, the **time logs that showed admirable organization** - morning cleaning rituals, weekend meal planning - were also the logs with the **highest total number of housrs spent on household tasks**
+
+#### Some suggestions to "make life easier":
++ If you're going to outsource cleaning tasks, make sure you outsource frequent tasks like laundry, dishes and ironing which take up most time
++ A **good way to frame helping with housework for kids** is to explain the money you save in not hiring outside help for those chores goes towards other family priorities like your adventures together
++ You can get most household items (especially recurring ones) delivered
++ Figure out a small list of healthy, quick dinners and then keep staples around to make them (no meal planning required)
++ Make chores fun
+  + Score quality time with your kids whilst running errands
+  + Make a shopping trip into a scavenger hunt where the aim is to find things as quickly as possible
++ **Most importantly, learn to let go**
+  + If you're bothered by the 3 dishes in the sink that need washing, that half hour you'd set aside for reading is chopped up and disappears
+  + If someone takes something off your plate and give you back that time, let go of it having to be done _your_ way
+  
+_Note: There was also a portion of this chapter called "The Childcare Dilemma" which I didn't read._
 
 ## Self
 <a name="Ch7"/>
