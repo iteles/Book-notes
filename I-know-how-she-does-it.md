@@ -7,7 +7,7 @@ _How Successful Women Make the Most of their Time_
 + **Work**
   + [Chapter 2 - Seek True Balance](#Ch2)
   + [Chapter 3 - Take Charge of Your Time](#Ch3)
-  +[Chapter 4 - Make Success Possible](#Ch4)
+  + [Chapter 4 - Make Success Possible](#Ch4)
 + **Home**
   + [Chapter 5 - Be There](#Ch5)
   + [Chapter 6 - Make Life Easier](#Ch6)
@@ -100,7 +100,8 @@ _Note: Some of these are very applicable to home life in general - I didn't read
 
 <a name="Ch6"/>
 ## Chapter 6 - Make Life Easier
-
++ Opens with really refreshing take on time (not one of someone haggard from never having time to do anything) from Lynda Bascelli, who's the busy medical director for a center for the homeless with 2 kids
+  + 
 
 ## Self
 <a name="Ch7"/>
