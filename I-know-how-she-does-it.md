@@ -128,7 +128,39 @@ _Note: There was also a portion of this chapter called "The Childcare Dilemma" w
 ## Self
 <a name="Ch7"/>
 ### Chapter 7 - Nurture Yourself
+> Self-care is the secret ingredient.
 
+Examining the time logs showed that **sleep, exercise** (discussed in _this_ chapter) and **leisure time** (discussed in the _next_ one) **don't need to fall prey to life getting in the way**.
+
+### Sleep
++ 90% of the women in the study go _at least_ 7-9 hours of sleep a day on average
+  + _No one_ in the sample slept less than an average of 6 hours a day
++ Statistically though, people who worked more hours tended to sleep less hours 
++ **People tend to _say_ they get less sleep than they do** because:
+  + When primed to think about sleep, they tend to remember the _bad nights_ first
+  + They tend not to count non-nocturnal sleep in their totals
+  
+> We all want _me_ time and the **key to getting enough sleep is making sure you do things you want to do at times that don't require you to burn the midnight all**.
+
+### Exercise
+> If people don't exercise it's because _they don't want to exercise_.  
+
++ If you create your time budget for the week - remember there are 168 hours - you'll often find the time is there _if you want to find it_, but **you may have other priorities** and you just have to deal with that
++ Time logs show:
+  + Average for time logs was 3.3 hours a week
+  + _Positive_ correlation between number of kids and exercise (possibly because of more activities with kids?)
+
+#### Making Time for Exercise
+**Remember that you don't have to exercise _every single day_**. So pick a time that will work for you twice a week and do that for example.
+
+1. "**Functional fitness**" - doubling up exercise with getting something else done, e.g. cycling to work, family jog in the park with your kid in the stroller 
++ **Get your workouts in early in the morning** - time logs showed this group preferred around 5am 
+  + "morning is a great time for exercise because we tend to have more willpower then and you're less likely to be interrupted"
+  + Getting up twenty minutes earlier can be enough, or **work out in what "would usually be kitchen puttering time"**
+
+> One woman [...] kept a log for me 3 weeks before she ran the Boston Marathon. [...]    
+All told **she devoted just over ten hours to physical activity. The average American watches ten hours of TV in about three days**.
+  
 <a name="Ch8"/>
 ### Chapter 8 - Savor Space
 
