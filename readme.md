@@ -3,6 +3,7 @@ I read a few books and I tend to take notes of the most interesting points (espe
 I have a separate repo for [Javascript the Good Parts](https://github.com/iteles/Javascript-the-Good-Parts) because this was my first set of markdown notes prior to deciding to put them all in one place.
 
 Currently in this Book-notes repo, you will find notes on:
++ I Know How She Does It _by Laura Vanderkam_, **currently in progress [in a separate branch](https://github.com/iteles/Book-notes/tree/i-know-how-she-does-it)**
 * [Professional Node js](https://github.com/iteles/Book-notes/blob/master/Professional-Node-js-notes.md) _by Pedro Teixeira_ [in progress]
 * [Start Small, Stay Small: A Developer's Guide to Launching a Startup](https://github.com/iteles/Book-notes/blob/master/Start-Small-Stay-Small-notes.md) _by Rob Walling_, 2010 [Completed]
 * [Simple & Usable - web, mobile & interaction design](https://github.com/iteles/Book-notes/blob/master/Simple-and-Usable-notes.md) _by Giles Colborne_, 2011 [Completed]
