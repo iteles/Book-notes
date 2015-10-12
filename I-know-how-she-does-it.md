@@ -45,6 +45,26 @@ There will be crashed rushed times with no sleep alongside time spent [doing wha
 # Work
 <a name="Ch2"/>
 ## Chapter 2 - Seek True Balance
++ Women who took part in the project put in an average of **44 hours of work per week**, with the majority under 50 hours per week and no one topping 70 hours (the person who logged 70 hours slept 48 hours too)
+  + A good number of the sample were accountants in 'busy season' so hours would be lower in off-season
+
+> Women massively limit their earning potential when they choose not to consider "big" jobs that would require a few extra hours of work on the margins [45 hours instead of 35].
+
+There is markedly a **point of diminishing returns** for _everyone_ and everyone's point is slightly different.
++ Peak working days were Wednesdays with an average of 9 hours worked
++ It's **better to plan in your breaks**  - if people didn't take _intentional_ breaks during the day, there came a time that they started taking _unintentional_ ones by remembering little errands they want to run for example
+
+**Tips for finding balance/time**
++ If your office requires you to work late, consider coming in later or taking longer breaks throughout the day
++ Study your schedule and **drop one hour-long meeting you don't actually need to be at**
++ **Revisit your to-do list and hour before your leaving time** - if you _couldn't_ work past your leaving time, what would you drop?
++ When you find yourself with an **unexpected couple of hours** in your day, **think about how you fill it** - don't just mindlessly do the laundry (you can do that when your brain is too tired or switched off), use it to write that story you've been meaning to write for months for example
+
+> But it's also okay to enjoy what you do for a living and _want to do more of it_. 
+
+It's okay to be excited about being **in a season of life that's about getting to do more work**. There will be seasons in your life where you do less. And that's what a balanced _life_ is all about.
+
+
 
 <a name="Ch3"/>
 ## Chapter 3 - Take Charge of Your Time
