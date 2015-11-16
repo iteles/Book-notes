@@ -183,6 +183,33 @@ All told **she devoted just over ten hours to physical activity. The average Ame
   
 <a name="Ch8"/>
 ### Chapter 8 - Savor Space
+Everyone in the Mosaic project had downtime, either reading (3.9 hours per week on average - 33mins per day), watching TV (4.4 hours per week on averageor some other leisure activity.  
+_Note: The logs were mostly collected during the Winter Olympics so the average of 4.4 hours of TV watched per week may be overstating things._
+
+> Did these things happen as much as people hoped? Probably not. **Nor was everyone mentally present during her downtime**.
+
++ Logs showed that **if we are not prepared for leisure time, we fritter it away** with laundry, mindlessly checking social media or snacking
+  + **Prepare a list of leisure activities you can quickly pick up and drop in the pockets of time you find**
++ **Time is elastic** and expands to what you need it to - if you have an emergency you need to deal with, you deal with it. But if at the beginning of the week you'd tried to set those 5 hours it took to deal with it aside for reading, you would probably have thought you couldn't
+
+**How to find time in your day for leisure activities:**
++ Build them into working hours - you already check social media so better to acknowledge that you're taking a small block of leisure time and **consciously decide if Pinterest is where you want to be spending it**
++ **Take a day off** - there will _always_ be demands on your time, so consciously take a day or part of a day to carry out your leisure activities [unencumbered by the guilt that 'you should be working']
++ **Embrace your nights** - for me personally ([@iteles](http://www.github.com/iteles)), this means that if I know I have dinner at 20h00 and I want to be asleep by 22h30 for example, I could work for 1 hour and do something fun or relaxing for an hour - I just need to plan it in so I don't end up swanning around
++ **Turn travel into 'me time'**
++ **Sign up to some activities for yourself** - if they're scheduled in you have to do them!
++ **Think through your weekends** - try planning your weekend on a week night (say Wednesday) so that you don't waste weekend time wondering what to do (the author recommends 3-5 fun activities per weekend, starting on a Friday night)
+
+**Learn how to switch off** to give yourself a break.
++ **Create transition rituals** between work and play (read the paper, go for a walk around your block)
++ Don't tell your partner _Everything_ about your day at dinner - that will just bring work firmly back into your brain
++ "Give yourself designated worry time" - if you give yourself a specific time of the week to worry about certain things, then they don't need to take up your headspace all week long
+
+**If there's something you truly want to do, you'll make time for it - you'll just end up foregoing the things you probably don't find as interesting or useful (e.g. catching up on TV in favour of learning photography).**
+
+
+
+
 
 <a name="Ch9"/>
 ### Chapter 9 - Master the Tiles
