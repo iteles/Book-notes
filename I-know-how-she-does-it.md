@@ -1,5 +1,11 @@
 # I Know How She Does It _by Laura Vanderkam_
-_How Successful Women Make the Most of their Time_
+#### How Successful Women Make the Most of their Time
+
+Note: This book focuses on successful women _with children_ but seeing as this is traditionally the group of people that are seen to be most time-starved, I suspected there would be good tips applicable to anyone.    
+This turned out to be true and I hope these notes sum these up adequately.
+
+
+I was drawn to this book particularly because of the time logs that are peppered throughout and I would recommend it to anyone with a similar interest in how others organise their time.    
 
 ## Table of Contents
 + [Introduction](#introduction)
