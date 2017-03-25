@@ -127,6 +127,56 @@ The **goal of your MVP** is not to start gathering a long list of features but t
 + Each one is a single moment in time
 + Customer Development team should use this as a 'scorecard' and **create a new one for each iteration and pivot**, highlighting the changes from the previous week/iteration
 
+### Phase 1
+Made up of the hypotheses in the business model canvas + the market size hypothesis (only one not in the BMC).
+
+#### Market Size hypothesis
+Estimate these three:
++ **Total Addressable Market (TAM)** - e.g. total no. of smartphone users in the world
++ **Served Available Market (SAM)** - total no. I can reach through my sales channel (e.g. Apple app store)
++ **Target Market** - people who are likely to buy *my* application
+
+A lot of web startups care mostly about the number of eyeballs they can get
+but if this is the business model (audience first, moentise later)
+then the key is to understand who will _pay_ for that audience.
+
+_Tip:_ Use **Google tools** to determine keywords and understand how many people are searching for them.
+
+Apparently more on this topic in Customer Discovery Phase 2, p218.
+
+#### Value Proposition hypothesis
+
+Write a series of briefs on:
++ **Product vision**
+  + What you want your successful company to become (often more than one product)
+  + Earlyvangelists are only spending money on a buggy initial version **because they believe in the total vision** for the product
+  + _Excellent_ set of questions to be answered and example for **bullet point product vision** on p. 76
+  + Also specifies **MVP and follow-on product dates** 18 months to 3 years into the future (first pass, not set in stone
++ **Product features and benefits**
+  + One page with top 10ish features of the complete product vision
+  + Product _benefits_ are how the product features solve a problem through the customer's eyes, a user story
+    + To do this, describe the problem, describe what frustrations the
+    problem is causing - how much lost revenue, time, level of frustration, slow speed, etc - and how the product will solve it
++ **MVP**
+  + "(...) smallest possible group of features that will work as a stand-alone product while still solving at least the "core" problem and demonstrating the product's value"
+  + Define what needs to be learned and ask 'what is the smallest or least complicated problem the customer will pay us to solve?'
+  + Lo-fidelity MVPs test if you've correctly _identified a problem people care about_
+  + Hi-fidelity MVP (Phase 3) tests whether the product _solves_ the problem (in Customer Validation, this should look and act much like a finished product)
+  
+
+
+> The goal of Customer Development is _not_ to collect features from customers [this is how you end up with 10 new features that will only get you an additional 5 customers], it's to **understand what not to ship**.
+
+
+
+
+## Customer Development
+
+
+> Minimize the number of features _not used_ by getting an MVP into customers' hands asap.
+
+> **No new features until you've exhausted the search for a business model [with the current set]**.
+
 
 //WiP
 + Where to start:
