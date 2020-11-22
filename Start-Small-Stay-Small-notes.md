@@ -1,11 +1,11 @@
 ## Table of Contents
-* [Chapter 1 - The Chasm Between Develop & Entrepreneur](#Chapter 1)
-* [Chapter 2 - Why Niches are the Name of the Game](#Chapter 2)
-* [Chapter 3 - Your Product](#Chapter 3)
-* [Chapter 4 - Building a Killer Sales Website](#Chapter 4)
-* [Chapter 5 - Startup Marketing](#Chapter 5)
-* [Chapter 6 - Virtual Assistants & Outsourcing](#Chapter 6)
-* [Chapter 7 - Grow it or Start Over](#Chapter 7)
+* [Chapter 1 - The Chasm Between Develop & Entrepreneur](#chapter-1---the-chasm-between-develop--entrepreneur)
+* [Chapter 2 - Why Niches are the Name of the Game](#chapter-2---why-niches-are-the-name-of-the-game)
+* [Chapter 3 - Your Product](#chapter-3---your-product)
+* [Chapter 4 - Building a Killer Sales Website](#chapter-4---building-a-killer-sales-site)
+* [Chapter 5 - Startup Marketing](#chapter-5---startup-marketing)
+* [Chapter 6 - Virtual Assistants & Outsourcing](#chapter-6---virtual-assistants--outsourcing)
+* [Chapter 7 - Grow it or Start Over](#chapter-7---grow-it-or-start-over)
 
 
 ## Chapter 1 - The Chasm Between Develop & Entrepreneur
